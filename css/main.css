@@ -1,0 +1,522 @@
+/*COLORS *Variables are not used* */
+
+/*
+Neutrals:
+*/
+--white: #ffffff; /*white*/
+--gray: #8C9399; /*gray*/
+--dgray: #57636e; /*darker gray*/
+--ddgray: #60666c; /*darker darker gray*/
+--dddgray: #3c3e42; /*darker darker darker gray*/
+--black: #000000; /*black*/
+/*
+Accents:
+*/
+--teal: #0ccAA0; /*teal*/
+
+/*USE THIS FOR NAVBAR TEXT: https://www.youtube.com/watch?v=_cWKesvhFlg
+
+MORE LINKS TO SAVE:
+https://education.github.com/pack/offers?sort=popularity
+https://pages.github.com/
+https://github.com/
+
+Z-index isn't working:https://coder-coder.com/z-index-isnt-working/*/
+
+head{
+  
+}
+
+body{
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.top{
+  height: 50%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  padding: 0px;
+  background-color: #ffffff;
+}
+
+.middle{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  padding: 0px;
+  background-color: #8C9399;
+}
+
+.middle2{
+  height: 1000px;
+  width: 100%;
+  position: absolute;
+  top: 110%;
+  padding: 0px;
+  background-color: #60666c;
+  z-index: 3;
+}
+
+.navbar{
+  position: sticky;
+  top: 0px;
+  z-index: 20;
+}
+
+.title{
+  width: auto;
+  float: left;
+  font-size: 20vw;
+  margin-left: 0px;
+  margin-top: 5px;
+}
+
+.titleplaceholder{
+  z-index: -1;
+}
+
+#page-container {
+  /*position: relative;
+  min-height: 100vh;*/
+}
+
+#content-wrap {
+  /*padding-bottom: 2.5rem;    /* Footer height */
+}
+
+footer{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: auto;
+  background-color: #303336;
+  box-sizing: border-box;
+}
+
+.tfooter {
+  color: #ffffff;
+  padding: 5px;
+  line-height: 30px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.tfooter2 {
+  font-size: 10px;
+  line-height: 10px;
+}
+
+path {
+  
+}
+
+/*LINES*/
+
+.l {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  display: block;
+  border: 0;
+  border-top: 1px solid #8C9399;
+}
+
+.vl {
+  border-left: 1px solid #8C9399;
+  position: absolute;
+}
+
+.lmenu {
+  right: 92px;
+  margin: 20px 10px 0px 10px;
+  padding: 0px;
+}
+
+.lscroll{
+  height: 49vh;
+  width: 95px;
+  right: 5%;
+  clear: left;
+}
+
+.darrow1{
+  position: absolute;
+  right: 5%;
+  top: 40vh;
+  margin-right: 22.5px;
+}
+
+.darrow2{
+  position: absolute;
+  right: 5%;
+  top: 35vh;
+  margin-right: 12.5px;
+}
+
+.linfo{
+  width: 75%;
+  margin: 33px 0px 0px 0px;
+  right: 0px;
+  padding: 0px;
+  border-top: 2px dashed #60666c;
+}
+
+.lprojects{
+  width: 100%;
+  right: 0px;
+  padding: 0px;
+  margin-bottom: 10px;
+  border-top: 2px solid #8C9399;
+  z-index: -1;
+}
+
+.lprojects2{
+  width: 60%;
+  left: 0px;
+  padding: 0px;
+  border-top: 2px dashed #60666c;
+  z-index: -1;
+}
+
+.lprojects3{
+  width: 65vw;
+  right: 0px;
+  padding: 0px;
+  border-top: 2px dashed #60666c;
+}
+
+/*TEXT*/
+
+.t{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.vtc{
+  font-family: 'Montserrat', sans-serif;
+  position: absolute;
+  transform: rotate(90deg);
+  transform-origin: 100px, 100px;
+}
+
+.vtcc{
+  font-family: 'Montserrat', sans-serif;
+  position: absolute;
+  transform: rotate(-90deg);
+  transform-origin: 0, 0;
+}
+
+.menu{
+  color: #8C9399;
+  display: inline-block;
+  float: right;
+  margin-top: 5px;
+  margin-right: 10px;
+  font-size: 25px;/*
+  text-shadow: -1px 1px 0px #ffffff; -1px -1px 0px #8C9399;*/
+}
+
+.tscroll {
+  color: #8C9399;
+  font-size: 10px;
+  right: 5%;
+  top: /*235px*/45vh;
+  margin-right: 20px;
+  animation: fade 2.5s ease-out 1 both;
+  animation-delay: 2.5s;
+}
+
+@keyframes fade{
+            from{
+                opacity: 0;
+                transform: perspective(500px) translate3d(-35px, -40px, -150px) rotate3d(1, -1, 0, 35deg);
+            }
+            to{
+                opacity: 1;
+                transform: perspective(500px) translate3d(0, 0, 0);
+            }
+        }
+
+.info{
+  color: #000000;
+  text-align: center;
+  margin-top: -15px;
+  font-size: 25px;
+}
+
+.info1{
+  color: #57636e;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.info15{
+  color: #000000;
+  margin-bottom: 0px;
+  margin-top: -35px;
+  text-align: right;
+  font-size: 30px;
+}
+
+.info2{
+  color: #57636e;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.info25{
+  color: #000000;
+  margin-bottom: 0px;
+  margin-top: -35px;
+  text-align: right;
+  font-size: 30px;
+}
+
+.info3{
+  color: #57636e;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.info35{
+  color: #000000;
+  margin-bottom: 0px;
+  margin-top: -35px;
+  text-align: right;
+  font-size: 30px;
+}
+
+.info4{
+  color: #57636e;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+/*.info45container {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}*/
+
+.info45 {
+  color: #000000;
+  margin-bottom: 0px;
+  margin-top: -35px;
+  margin-left: 110px;
+  text-align: right;
+  font-size: 4.5vh;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 140px;
+}
+
+.projects{
+  color: #000000;
+  text-align: center;
+  margin-top: -15px;
+  font-size: 25px;
+  /*z-index: 1;*/
+}
+
+/*PROJECTS*/
+
+/*Placeholder Project Images: https://www.behance.net/gallery/89078077/RIVER-PAINTINGS-Iceland-From-Above-III?tracking_source=best_of_behance
+
+https://www.behance.net/gallery/88515035/Creatures-5?tracking_source=best_of_behance*/
+
+.parallax {
+  /* Set a specific height */
+  height: 300px;
+  display: block;
+  overflow: hidden;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.42,0,0.58,1);
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  border: 2px solid #3c3e42;
+}
+
+.pbox1{
+  height: 75px;
+  width: 80%;
+  position: absolute;
+  top: 40px;
+  right: 0px;
+  padding: 0px;
+  background-color: #8C9399;
+}
+
+.p1{
+  width: 90%;
+  margin-top: 10px;
+  margin-left: 10px;
+  filter: grayscale(100%);
+  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/496dea88515035.5ddbef1222761.jpg");
+}
+
+.pbox2{
+  height: 75px;
+  width: 80%;
+  position: absolute;
+  top: 320px;
+  left: 0px;
+  padding: 0px;
+  background-color: #8C9399;
+}
+
+.p2{
+  width: 90%;
+  margin-top: 10px;
+  margin-left: 30px;
+  filter: grayscale(100%);
+  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/5843e488515035.5de3c6c629ba3.jpg");
+}
+
+.pbox3{
+  height: 75px;
+  width: 80%;
+  position: absolute;
+  top: 600px;
+  right: 0px;
+  padding: 0px;
+  background-color: #8C9399;
+}
+
+.p3{
+  width: 90%;
+  margin-top: 10px;
+  margin-left: 10px;
+  filter: grayscale(100%);
+  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/a3fab988515035.5dda6b3a230b0.jpg");
+}
+
+.tp{
+  color: #ffffff;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  width: 40vw;
+  font-size: 7vw;
+  margin-left: 20px;
+  margin-top: 20px;
+  overflow-wrap: break-word;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.42,0,0.58,1);
+}
+
+.tp2{
+  color: #ffffff;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  width: 40vw;
+  font-size: 7vw;
+  margin-left: 20px;
+  margin-top: 20px;
+  overflow-wrap: break-word;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.42,0,0.58,1);
+}
+
+.tp3{
+  color: #ffffff;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  width: 40vw;
+  font-size: 7vw;
+  margin-left: 20px;
+  margin-top: 20px;
+  overflow-wrap: break-word;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.42,0,0.58,1);
+}
+
+.parallax:hover .th {
+  opacity: 0;
+  filter: blur(25px);
+}
+
+.parallax:hover {
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.42,0,0.58,1);
+  filter: grayscale(0%);
+  cursor: crosshair;
+}
+
+/*LINKS*/
+
+/*regular*/
+a:link {
+  color: var(--ddteal);
+  text-decoration: none;
+  padding: 5px;
+  line-height: 105%;
+  -webkit-animation: linkcolorchange2 10s infinite alternate;
+}
+
+/*hovering over*/
+a:hover {
+  /*background-color: $black;
+  border-radius: 6px;*/
+  padding: 5px;
+  line-height: 110%;
+  text-decoration: none;
+}
+
+/*color change!*/
+
+@-webkit-keyframes linkcolorchange2 {
+  0% {
+        color: var(--salmon);
+      }
+  25% {
+        color: #F77F00;
+      }
+  50% {
+        color: #FCBF49;
+      }
+  75% {
+        color: var(--salmon);
+      }
+  100% {
+        color: #EAE2B7;
+      }
+}
+
+/*link animated underline!!*/
+
+.animUnder {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+}
+
+.animUnder:hover {
+  color: #fff;
+}
+
+.animUnder:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #555;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.animUnder:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(.5);
+  transform: scaleX(.5);
+}
