@@ -5,7 +5,8 @@
 <head>
   <!-- link to main stylesheet -->
   <link rel="stylesheet" type="text/css" href="/css/main.css">
-  
+  <!--FontAwesome-->
+  <script src="https://kit.fontawesome.com/c8a86051af.js" crossorigin="anonymous"></script>
   <!--GoogleFonts-->
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
   <!--GoogleFonts Usage:
@@ -15,6 +16,13 @@ font-family: 'Montserrat', sans-serif;
 
 <body>
   <div id="page-container">
+    <div class="cursor cursor--small"></div>
+    <div class="cursor cursor--medium"></div>
+    <canvas class="cursor cursor--canvas" resize></canvas>
+    <!--Paper.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.0/paper-core.min.js"></script>
+    <!--SimplexNoise (noise generator)-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js"></script>
     <div id="content-container">
       <div class="top">
         <!--<div class="title t left">NIC</div>
@@ -64,34 +72,40 @@ font-family: 'Montserrat', sans-serif;
         <div class="l lprojects3"></div>
         <div class="t info4">ABOUT</div>
         <div class="info45container">
-          <div class="t info45">I'm Nicolas Gibson, someone with a passion to learn new things and put them into practice. Currectly I am a sophomore at a design-oriented high school in California. With the many tools at my disposal, I create things that I feel will highlight the many sides of me.</div>
+          <div class="t info45">I'm Nicolas Gibson, someone with a passion to learn new things and put them into practice. Currently I am a sophomore at a design-oriented high school in California. With the many tools at my disposal, I create things that I feel will highlight the many sides of me.</div>
         </div>
       </div>
       <div class="middle2">
         <div class="l lprojects"></div>
         <div class="l lprojects2"></div>
         <div class="t projects"> PROJECTS</div>
-        <div class="pbox1">
-          <div class="p1 parallax">
-            <div class="t th tp">Project : The First</div>
+        <div class="pboxes">
+          <div class="pbox pbox1">
+            <div class="p1 parallax">
+              <div class="t th tp">Project : The First</div>
+            </div>
           </div>
-        </div>
-        <div class="pbox2">
-          <div class="p2 parallax">
-            <div class="t th tp2">Project : The Second</div>
+          <div class="pbox pbox2">
+            <div class="p2 parallax">
+              <div class="t th tp2">Project : The Second</div>
+            </div>
           </div>
-        </div>
-        <div class="pbox3">
-          <div class="p3 parallax">
-            <div class="t th tp3">Project : The Third</div>
+          <div class="pbox pbox3">
+            <div class="p3 parallax">
+              <div class="t th tp3">Project : The Third</div>
+            </div>
           </div>
         </div>
         <footer>
-          <div class="t tfooter">HTML & CSS by Nicolas Gibson<br>Any Questions or Concerns? <a href="mailto:ngibson22@dtechhs.org" target="blank" class="animUnder">Email Me!</a><br><em class="tfooter2"><i class="tfooter2">social media coming soon!</i></em>
+          <div class="t tfooter">HTML & CSS by Nicolas Gibson<br>Any Questions or Concerns? <a href="mailto:ngibson22@dtechhs.org" target="blank" class="animUnder">Email Me!</a><br>
+            <a href="https://github.com/NicGib/nicgib.github.io" target="blank"><i class="fab fa-github bounce"></i></a>
+            <a href="https://codepen.io/NicGib" target="blank"><i class="fab fa-codepen bounce"></i></a>
+            <em class="tfooter2"><i class="tfooter2">more social media coming soon!</i></em>
           </div>
         </footer>
       </div>
     </div>
   </div>
 </body>
+
 </html>
