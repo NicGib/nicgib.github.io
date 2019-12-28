@@ -14,6 +14,7 @@ Accents:
 */
 --teal: #0ccAA0; /*teal*/
 
+
 /*USE THIS FOR NAVBAR TEXT: https://www.youtube.com/watch?v=_cWKesvhFlg
 
 MORE LINKS TO SAVE:
@@ -21,7 +22,11 @@ https://education.github.com/pack/offers?sort=popularity
 https://pages.github.com/
 https://github.com/
 
+CUSTOM CURSOR:
+https://tympanus.net/codrops/2019/01/31/custom-cursor-effects/
+
 Z-index isn't working:https://coder-coder.com/z-index-isnt-working/*/
+
 
 head{
   
@@ -32,6 +37,58 @@ body{
   height: 100%;
   margin: 0px;
   padding: 0px;
+  cursor: url('https://s.electerious.com/images/codepen/cursor.svg') 3 3, auto;
+}
+/*
+.cursor {
+  pointer-events: none;
+}
+
+.cursor-ball {
+  position: fixed;
+  top: 0;
+  left: 0;
+  mix-blend-mode: difference;
+  z-index: 1000;
+}
+
+.circle {
+  fill: #f7f8fa;
+}*/
+
+.cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+/*
+.cursor--small {
+  width: 5px;
+  height: 5px;
+  left: -2.5px;
+  top: -2.5px;
+  border-radius: 50%;
+  z-index: 11000;
+  background: #ffffff;
+}*/
+
+.cursor--medium {
+  width: 20px;
+  height: 20px;
+  left: -10px;
+  top: -10px;
+  border-radius: 50%;
+  z-index: 11000;
+  background: #000000;
+  transition-duration: .03s;
+  opacity: .25;
+}
+
+.cursor--canvas {
+  width: 100vw;
+  height: 100vh;
+  z-index: 12000;
 }
 
 .top{
@@ -53,7 +110,7 @@ body{
 }
 
 .middle2{
-  height: 1000px;
+  height: 1250px;
   width: 100%;
   position: absolute;
   top: 110%;
@@ -76,16 +133,24 @@ body{
   margin-top: 5px;
 }
 
+.title-projects{
+  width: auto;
+  float: left;
+  font-size: 20vw;
+  margin-left: -5%;
+  margin-top: 5px;
+}
+
 .titleplaceholder{
   z-index: -1;
 }
 
-#page-container {
+#page-container{
   /*position: relative;
   min-height: 100vh;*/
 }
 
-#content-wrap {
+#content-wrap{
   /*padding-bottom: 2.5rem;    /* Footer height */
 }
 
@@ -111,8 +176,12 @@ footer{
   line-height: 10px;
 }
 
-path {
+.pboxes{
   
+}
+
+.footerspacing{
+  margin-bottom: 100px;
 }
 
 /*LINES*/
@@ -444,22 +513,27 @@ https://www.behance.net/gallery/88515035/Creatures-5?tracking_source=best_of_beh
 .parallax:hover {
   transition-duration: 0.5s;
   transition-timing-function: cubic-bezier(0.42,0,0.58,1);
-  filter: grayscale(0%);
-  cursor: crosshair;
+  filter: grayscale(0%);/*
+  cursor: crosshair;*/
 }
 
 /*LINKS*/
 
 /*regular*/
 a:link {
-  color: var(--ddteal);
+  color: #57636e;
   text-decoration: none;
   padding: 5px;
   line-height: 105%;
   -webkit-animation: linkcolorchange2 10s infinite alternate;
 }
 
+.noColor:link {
+  -webkit-animation: linkcolorchange3 10s infinite alternate;
+}
+
 /*hovering over*/
+
 a:hover {
   /*background-color: $black;
   border-radius: 6px;*/
@@ -485,6 +559,15 @@ a:hover {
       }
   100% {
         color: #EAE2B7;
+      }
+}
+
+@-webkit-keyframes linkcolorchange3 {
+  0% {
+        color: var(--notset);
+      }
+  100% {
+        color: var(--notset);
       }
 }
 
@@ -519,4 +602,90 @@ a:hover {
   visibility: visible;
   -webkit-transform: scaleX(.5);
   transform: scaleX(.5);
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+            transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+            transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+            transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+            transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+            transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes bounce {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+            transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+            transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+            transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+            transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+            transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+
+/*brand links*/
+
+.bounce:hover {
+	-webkit-animation: bounce 0.9s both;
+	        animation: bounce 0.9s both;
+}
+
+.fab {
+  padding: 10px 10px;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition: .5s;
+  color: #ffffff;
+}
+
+.fa-github:hover {
+  color: #b29ae0;
+}
+
+.fa-codepen:hover {
+  color: #ffdd40;
 }
