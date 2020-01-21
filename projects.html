@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<title>NicGib</title>
+
+<head>
+  <!-- link to main stylesheet -->
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <!--main js script-->
+  <script src="main.js"></script>
+  <!--FontAwesome-->
+  <script src="https://kit.fontawesome.com/c8a86051af.js" crossorigin="anonymous"></script>
+  <!--GoogleFonts-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <!--GoogleFonts Usage:
+font-family: 'Montserrat', sans-serif;
+-->
+</head>
+
+<body>
+  <div id="page-container">
+    <div class="cursor cursor--small"></div>
+    <div class="cursor cursor--medium"></div>
+    <canvas class="cursor cursor--canvas" resize></canvas>
+    <!--Paper.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.0/paper-core.min.js"></script>
+    <!--SimplexNoise (noise generator)-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js"></script>
+    <div id="content-container">
+      <div class="top">
+        <!--<div class="title t left">NIC</div>
+    <div class="title t right">GIB</div>-->
+        <div class="navbar">
+          <hr class="l lmenu">
+          <div class="t menu"><a href="https://nicgib.github.io/" class="animUnder noColor">HOME</a></div>
+        </div>
+        <div class="title titleplaceholder">
+          <!--<img src="https://www.canva.com/learn/wp-content/uploads/2016/07/Screen-Shot-2019-02-06-at-2.33.37-pm.png" alt="NICGIB" height="230px" width="auto" class="titleplaceholder">-->
+          <h1 class="t title-projects">PROJECT #</h1>
+        </div>
+        <div>
+          <div class="vl lscroll"></div>
+          <div class="lscroll darrow1">
+            <svg height="20" width="18">
+          <line x1="0" y1="0" x2="20" y2="20" style="stroke: #8C9399 ;stroke-width:1; margin: 0px; padding: 0px;"/>
+        \
+        </svg>
+            <svg height="20" width="20">
+          <line x1="20" y1="0" x2="0" y2="20" style="stroke: #8C9399 ;stroke-width:1; margin: 0px; padding: 0px;"/>
+        \
+        </svg>
+          </div>
+          <div class="lscroll darrow2">
+            <svg height="10" width="8">
+          <line x1="0" y1="0" x2="10" y2="10" style="stroke: #8C9399 ;stroke-width:1; margin: 0px; padding: 0px;"/>
+        \
+        </svg>
+            <svg height="10" width="10">
+          <line x1="10" y1="0" x2="0" y2="10" style="stroke: #8C9399 ;stroke-width:1; margin: 0px; padding: 0px;"/>
+        \
+        </svg>
+          </div>
+          <div class="vtc tscroll" id="tanim">s c &nbspr &nbsp&nbspo &nbsp&nbsp&nbspl &nbsp&nbsp&nbsp&nbspl</div>
+        </div>
+      </div>
+      <div class="middle">
+        <div class="t info">ABOUT THIS PROJECT</div>
+        <div class="l linfo"></div>
+        <div class="t info1">NAME</div>
+        <div class="t info15">PROJECT #</div>
+        <div class="t info2">TOPIC</div>
+        <div class="t info25">TOPIC</div>
+        <div class="l lprojects3"></div>
+        <div class="t info4">DESCRIPTION</div>
+        <div class="info45container">
+          <div class="t info45">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in erat condimentum, tincidunt ligula viverra, euismod quam. Duis finibus ullamcorper pharetra. Etiam congue tempor eros, sed mattis felis elementum in. Fusce sem erat, pellentesque quis suscipit sed, lobortis cursus massa. Suspendisse sodales nulla a sollicitudin egestas. Aenean eleifend erat ut mollis sollicitudin. Vivamus quis dignissim metus.</div>
+        </div>
+      </div>
+      <div class="middleprojects2">
+        <div class="l lprojects"></div>
+        <div class="l lprojects2"></div>
+        <div class="prbox">
+          <!--Add more pictures/adjust the sizes/arrange these dividers differently for different projects!-->
+          <div class="pr pr1"></div>
+          <div class="prbox"></div>
+          <div class="pr pr2"></div>
+          <div class="prbox"></div>
+          <div class="prbox2"></div>
+          <div class="pr pr3"></div>
+          <div class="prbox2"></div>
+          <div class="pr pr4"></div>
+        </div>
+      <!--<div class="pboxes">
+          <div class="pbox pbox1">
+            <div class="p1 parallax">
+              <div class="t th tp">Project : The First</div>
+            </div>
+          </div>
+          <div class="pbox pbox2">
+            <div class="p2 parallax">
+              <div class="t th tp2">Project : The Second</div>
+            </div>
+          </div>
+          <div class="pbox pbox3">
+            <div class="p3 parallax">
+              <div class="t th tp3">Project : The Third</div>
+            </div>
+          </div>
+        </div>-->
+        <footer>
+          <div class="t tfooter">HTML & CSS by Nicolas Gibson<!--<br>Any Questions or Concerns? <a href="mailto:ngibson22@dtechhs.org" target="blank" class="animUnder">Email Me!</a>--><br>
+            <a href="https://github.com/NicGib/nicgib.github.io" target="blank"><i class="fab fa-github bounce"></i></a>
+            <a href="https://codepen.io/NicGib" target="blank"><i class="fab fa-codepen bounce"></i></a>
+            <em class="tfooter2"><i class="tfooter2">more social media coming soon!</i></em>
+          <div class="backtotop">
+            <div><a class="t prfooterbg" onclick="topFunction()">BACKTOTOP</a><a class="t prfooter" onclick="topFunction()">BACKTOTOP</a><a class="t prfooterbg" onclick="topFunction()">BACKTOTOP</a></div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+</body>
+  
+<script>
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>  
+
+</html>
