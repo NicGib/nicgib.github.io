@@ -1,3 +1,30 @@
+const cursor = document.querySelector(".cursor");
+const cursorwhite = document.querySelector(".cwhite");
+
+let mouseX = 0;
+let mouseY = 0;
+
+// Move cursor as mouse moves
+document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    updateCursorPosition();
+});
+
+// Update cursor position on scroll
+document.addEventListener("scroll", updateCursorPosition);
+
+function updateCursorPosition() {
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    cursor.style.left = (mouseX + scrollX) + 'px';
+    cursor.style.top = (mouseY + scrollY) + 'px';
+    cursorwhite.style.left = (mouseX + scrollX) + 'px';
+    cursorwhite.style.top = (mouseY + scrollY) + 'px';
+}
+
+/*
+
 const cursor = document.querySelector(".cursor")
 
 // move cursor as mouse move
@@ -13,6 +40,8 @@ document.addEventListener("mousemove", (e) => {
    cursorwhite.style.left = e.pageX + 'px'
    cursorwhite.style.top = e.pageY + 'px'
 })
+
+*/
 
 // add different classes on events
 const links = document.querySelectorAll("a")
