@@ -40,7 +40,7 @@ links.forEach((link) => {
 window.onscroll = function() {myFunction()};
 
 function myFunction() {
-  if (document.body.scrollTop > 550 || document.documentElement.scrollTop > 550) {
+  if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
     document.getElementById("fhiderid").style.zIndex = "-4";
     document.getElementById("footerid").style.zIndex = "2";
   } else {
