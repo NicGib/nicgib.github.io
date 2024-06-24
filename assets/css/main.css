@@ -86,6 +86,53 @@ body {
    opacity: 100%;
 }
 
+@media only screen and (max-width: 768px) { /*Tablet: no cursor*/
+  .cursor {
+    display: none;
+  }
+  .cwhite {
+    display: none;
+  }
+}
+
+/* Back To Top Button */
+
+#myBtn {
+  display: flex;
+  opacity: 0;
+  transition: 0.2s;
+
+  position: fixed;
+  bottom: 30px;
+  /*right: calc(50vw - 21px);*/
+  right: 40px;
+  z-index: 99;
+
+  width: 41px;
+  height: 41px;
+  padding: 0px;
+  text-align: center;
+
+  justify-content: center;
+  align-items: center;
+
+  font-family: Azonix;
+  font-size: 18px;  
+  color: #000000;
+  border: 0 solid #ECF2F9;
+  border-radius: 50%;
+  outline: none;
+  background-color: #ECF2F9;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+#myBtn:hover {
+  background-color: #000000;
+  border: 5px solid #ECF2F9;
+  color: #ECF2F9;
+  scale: 1.2;
+}
+
 /*Links*/
 a {
   /*font-family: "Azonix";*/
@@ -105,8 +152,8 @@ a:hover {
 
 a.onwhite:hover {
   /*color: #ECF2F9;*/
-  color: #2200cc;
-  text-shadow: 2px 2px #F03377; /*ECF2F9 gray | F03377 red*/
+  color: #F03377;
+  text-shadow: 0.5px 0.5px #2200cc; /*ECF2F9 gray | F03377 red*/
 }
 
 /*Text*/
@@ -370,6 +417,15 @@ p {
   }
 }
 
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
 .home-grid-marquee-gradient {
   position: absolute;
   left: 0;
@@ -521,6 +577,27 @@ p {
   background-color: #ECF2F9;
 }
 
+.limit-75 {
+  max-width: 75vw;
+}
+.limit-50 {
+  max-width: 50vw;
+}
+.limit-25 {
+  max-width: 25vw;
+}
+@media only screen and (max-width: 600px) {
+  .limit-75 {
+  max-width: none;
+}
+.limit-50 {
+  max-width: none;
+}
+.limit-25 {
+  max-width: none;
+}
+}
+
 .pdivflex-divided {
   width: 100%;
   height: 100%;
@@ -565,6 +642,7 @@ p {
   text-align: center;
   font-family: 'Bebas Neue', cursive;
   font-size: 10vw;
+  line-height: 80%;
   text-shadow: 2px 2px #F03377;
 }
 
@@ -645,7 +723,7 @@ footer a {
 
 .iconflex {
   position: absolute;
-  right: 30px;
+  right: 50px;
   
   display: flex;
   flex-direction: column;
@@ -656,7 +734,7 @@ footer a {
 
 .iconnameflex {
   position: absolute;
-  right: 140px;
+  right: 160px;
   font-size: 0.5em;
   
   display: flex;
