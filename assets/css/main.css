@@ -86,12 +86,15 @@ body {
    opacity: 100%;
 }
 
-@media only screen and (max-width: 768px) { /*Tablet: no cursor*/
+@media only screen and (max-width: 425px) { /*Phone: no cursor*/
   .cursor {
     display: none;
   }
   .cwhite {
     display: none;
+  }
+  * {
+    cursor: default;
   }
 }
 
@@ -216,15 +219,20 @@ p {
   /*font-family: "Azonix";*/
   font-family: "Space Grotesk", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 700;
+  font-weight: 400;
   font-style: normal;
 
   position: fixed;
   top: 24px;
   right: 20px;
   font-size: 1.5em;
-  text-shadow: 2px 2px #2200cc; /*ECF2F9 gray | F03377 red*/
+  color: #2200cc;
+  text-shadow: 1px 1px #ECF2F9; /*ECF2F9 gray | F03377 red*/
   z-index: 100;
+}
+
+.about-link:hover {
+  text-shadow: 1px 1px #F03377;
 }
 
 /*Large Home Container (Contains svg + black container)*/
@@ -274,7 +282,8 @@ p {
   
   /*filter: grayscale(100%);*/
   /*background-blend-mode: normal;*/
-  /*box-shadow: inset 0 0 0 10px rgba(95, 64, 224,0);*/
+  /*box-shadow: inset 0 0 0 300px rgba(95, 64, 224,0.25);*/
+  box-shadow: inset 0 0 0 300px rgba(0, 0, 0, 0.25);
   filter: invert(0%);
   transition: 0.5s;
 }
@@ -299,19 +308,19 @@ p {
 }
 
 .home-gitem-transition:hover {
-	/*box-shadow: inset 0 0 0 10px rgba(0, 0, 0, 0.5);*/
+	box-shadow: inset 0 0 0 300px rgba(0, 0, 0, 0);
   /*background-blend-mode: difference;*/
-  filter: invert(100%);
+  /*filter: invert(100%);*/
 }
 .home-gitem-transition:hover h2{
 	/*box-shadow: inset 0 0 0 10px rgba(0, 0, 0, 0.5);*/
   /*background-blend-mode: difference;*/
-  filter: invert(100%);
+  /*filter: invert(100%);*/
 }
 .home-gitem-transition:hover p{
 	/*box-shadow: inset 0 0 0 10px rgba(0, 0, 0, 0.5);*/
   /*background-blend-mode: difference;*/
-  filter: invert(100%);
+  /*filter: invert(100%);*/
 }
 
 .home-gitem-no-transition:hover {
@@ -635,6 +644,15 @@ p {
   background-color: #ECF2F9;
 }
 
+.pimg-5 {
+  margin: none;
+  background-color: #ECF2F9;
+  width: calc((100vw - 80vw) - 14px);
+  /*height: calc(100vh - 40px);*/
+  height: auto;
+  background-color: #ECF2F9;
+}
+
 .ptext-header {
   padding: 20px;
   padding-top: 0px;
@@ -884,8 +902,9 @@ footer a {
 
 .about-div5 {
   background-color: #ECF2F9;
+  box-shadow: inset 10em 10em rgba(236, 242, 249, 0.75);
   
-  background-image: url("https://cdn.glitch.com/495005c3-fbd4-40ec-9078-f8aa56af48b9%2FCowProfilePic-export(3).png?v=1627689039077");
+  /*background-image: url("https://cdn.glitch.com/495005c3-fbd4-40ec-9078-f8aa56af48b9%2FCowProfilePic-export(3).png?v=1627689039077");*/
   background-repeat: no-repeat;
   background-size: auto calc(45vh - 140px);
   background-position: 50% 0px;
