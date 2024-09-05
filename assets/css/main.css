@@ -191,8 +191,16 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100vh;
   align-items: center;
+
+  min-height: 100vh;
+  position: relative;
+}
+
+.titleParallax {
+  display: block;
+  position: absolute;
+  opacity: 0; /* initial opacity is 0 */
 }
 
 .svg-arrow {
@@ -209,9 +217,17 @@ p {
   z-index: 100;
 }
 
+.svg-glasses-new {
+  position: fixed;
+  top: -5px;
+  left: 20px;
+  /*width: 89px;*/
+  /*height: 53px;*/
+  z-index: 100;
+}
+
 .svg-glasses-link {
   /*Takes to home page*/
-  
 }
 
 .about-link {
@@ -223,8 +239,8 @@ p {
   font-style: normal;
 
   position: fixed;
-  top: 24px;
-  right: 20px;
+  top: -10px; /* Originally 24px */
+  right: 25px; /* Originally 20px */
   font-size: 1.5em;
   color: #2200cc;
   text-shadow: 1px 1px #ECF2F9; /*ECF2F9 gray | F03377 red*/
@@ -658,8 +674,9 @@ p {
   padding-top: 0px;
   padding-bottom: 20px;
   text-align: center;
-  font-family: 'Bebas Neue', cursive;
-  font-size: 10vw;
+  font-family: "Space Grotesk", sans-serif;
+  /*font-family: 'Bebas Neue', cursive;*/
+  font-size: 10vw; /* Originally 10vw */
   line-height: 80%;
   text-shadow: 2px 2px #F03377;
 }
