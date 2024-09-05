@@ -3,6 +3,7 @@ const cursorwhite = document.querySelector(".cwhite");
 
 let mouseX = 0;
 let mouseY = 0;
+let isLinkHovered = false; // Track if a link is hovered
 
 // Move cursor as mouse moves
 document.addEventListener("mousemove", (e) => {
@@ -17,6 +18,10 @@ document.addEventListener("scroll", updateCursorPosition);
 function updateCursorPosition() {
     const scrollX = window.scrollX;
     const scrollY = window.scrollY;
+    // Adjust position to keep cursor centered
+    const cursorWidth = cursor.offsetWidth / 2;
+    const cursorHeight = cursor.offsetHeight / 2;
+
     cursor.style.left = (mouseX + scrollX) + 'px';
     cursor.style.top = (mouseY + scrollY) + 'px';
     cursorwhite.style.left = (mouseX + scrollX) + 'px';
@@ -28,15 +33,49 @@ function updateCursorPosition() {
 const links = document.querySelectorAll("a")
 links.forEach((link) => {
    link.addEventListener("mouseover", () => {
-      cursor.classList.add('link');
-      cursorwhite.classList.add('link');
+        isLinkHovered = true; // Set flag to indicate a link is hovered
+        cursor.classList.add('link');
+        cursorwhite.classList.add('link');
+        //scale up
+        TweenMax.to(cursor, 0.05, { width: 60, height: 60, ease: Power4.easeOut });
+        TweenMax.to(cursorwhite, 0.4, { width: 70, height: 70, ease: Power4.easeOut });
+        updateCursorPosition(); // Adjust position on size change
    })
    link.addEventListener("mouseout", () => {
-      cursor.classList.remove('link');
-      cursorwhite.classList.remove('link');
+        isLinkHovered = false; // Reset flag when leaving a link
+        cursor.classList.remove('link');
+        cursorwhite.classList.remove('link');
+        //scale down
+        TweenMax.to(cursor, 0.05, { width: 10, height: 10, ease: Power2.easeIn });
+        TweenMax.to(cursorwhite, 0.2, { width: 20, height: 20, ease: Power2.easeIn });
+        updateCursorPosition(); // Adjust position on size change
    })
 })
 
+// Scale up on mouse press (mousedown), scale down on release (mouseup)
+document.addEventListener("mousedown", () => {
+    if (isLinkHovered) {
+        // Custom scaling for links on mousedown
+        TweenMax.to(cursor, 0.05, { width: 70, height: 70, ease: Power4.easeOut });
+        TweenMax.to(cursorwhite, 0.4, { width: 80, height: 80, ease: Power4.easeOut });
+    } else {
+        TweenMax.to(cursor, 0.05, { width: 30, height: 30, ease: Power4.easeOut });
+        TweenMax.to(cursorwhite, 0.4, { width: 40, height: 40, ease: Power4.easeOut });
+        updateCursorPosition(); // Adjust position during size change
+    }
+});
+document.addEventListener("mouseup", () => {
+    if (isLinkHovered) {
+        // Return to hover size after releasing click on a link
+        TweenMax.to(cursor, 0.1, { width: 60, height: 60, ease: Power2.easeIn });
+        TweenMax.to(cursorwhite, 0.2, { width: 70, height: 70, ease: Power2.easeIn });
+    } else {
+        // Return to default size after releasing click outside of links
+        TweenMax.to(cursor, 0.1, { width: 10, height: 10, ease: Power2.easeIn });
+        TweenMax.to(cursorwhite, 0.2, { width: 20, height: 20, ease: Power2.easeIn });
+    }
+    updateCursorPosition(); // Adjust position during size change
+});
 
 
 // Flag to track the current mode (desktop or mobile)
@@ -165,7 +204,7 @@ window.onscroll = function() {myFunction()};
 function myFunction() {
     //Footer Hide
     if (isHomeFooter.length > 0) { //If page is has the home footer
-      if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+      if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
         document.getElementById("fhiderid").style.zIndex = "-4";
         document.getElementById("footerid").style.zIndex = "2";
       } else {
