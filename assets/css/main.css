@@ -723,7 +723,7 @@ p {
 }
 
 .ptext-header {
-  padding: 20px;
+  padding: 30px;
   padding-top: 0px;
   padding-bottom: 20px;
   text-align: center;
@@ -736,12 +736,21 @@ p {
 
 .ptext {
   color: #000000;
-  padding: 20px;
-  padding-top: 0px;
-  padding-bottom: 0px;
+  padding: 0 30px;
   text-align: left;
   font-family: 'Space Mono', monospace;
   font-weight: 300;
+}
+
+@media only screen and (min-width: 1000px) {
+  .ptext {
+    padding: 0 20vw; /*matches width of pimg-large*/
+  }
+  .ptext-header {
+    padding: 0 5vw; /*matches width of pimg-large*/
+    font-size: 8vw; /* Originally 10vw */
+    padding-bottom: 20px;
+  }
 }
 
 .ptext-caption {
@@ -752,6 +761,7 @@ p {
   font-style: normal;
   font-family: 'Space Grotesk', sans-serif;
   font-weight: normal;
+  text-align: center;
 
   font-size: 0.9em;
 
@@ -796,6 +806,7 @@ p {
   }
   .pdivflex-divided {
     flex-direction: column;
+    align-items: center;
   }
   .pdf-portrait {
     width: 80%;
@@ -805,6 +816,50 @@ p {
     width: 80%;
     height: auto;
   }
+}
+
+/* Call to Action (CTA) Button (Span for centering) */
+.pbutton-center {
+  padding: .75rem 1rem;
+  display: block;
+  text-align: center;
+/*margin: 24px 0;*/
+}
+
+.pbutton {
+  background-color: #F9FAFB;
+  border: 0;
+  border-radius: .5rem;
+  box-sizing: border-box;
+
+  /*2200cc blue | ECF2F9 gray | F03377 red | #5f41e1 purple*/
+  color: #2200cc; /* Originally #111827 */
+/*  font-size: .875rem;*/
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: .75rem 1rem;
+  text-align: center;
+  text-decoration: none #D1D5DB solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.pbutton:hover {
+  background-color: #ECF2F9;
+  color: #F03377;
+}
+.pbutton:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+.pbutton:focus-visible {
+  box-shadow: none;
+}
+
+.ptext .pbutton {
+  text-align: center;
 }
 
 /*FOOTER*/
