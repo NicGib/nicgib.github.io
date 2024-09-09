@@ -624,6 +624,24 @@ p {
   height: 20px;
 }
 
+.pdivider-border {
+  width: 1fr;
+  height: 40px;
+  /*2200cc blue | ECF2F9 gray | F03377 red*/
+  border-bottom: 1px solid #525659; /* #525659 (caption gray) */
+  margin: 0 20%;
+  margin-bottom: 40px;
+}
+
+.pdivider-border-small {
+  width: 1fr;
+  height: 20px;
+  /*2200cc blue | ECF2F9 gray | F03377 red*/
+  border-bottom: 1px solid #525659; /* #525659 (caption gray) */
+  margin: 0 20%;
+  margin-bottom: 20px;
+}
+
 .pdivflex-large {
   width: 100%;
   height: 100%;
@@ -632,6 +650,11 @@ p {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
+}
+
+/* Class that is automatically applied to data-enlargable images */
+.img-enlargeable {
+  /* Used in script.js for cursor */
 }
 
 .pimg-large {
@@ -660,6 +683,41 @@ p {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: flex-start; /*customize to be centered on specific divs*/
+}
+
+/* https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp */
+.pdivflex-gallery-row {
+  width: 100%;
+  /*height: 100%;*/
+  height: auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start; /*customize to be centered on specific divs*/
+}
+.pdivflex-gallery-column { /* By default: 3 columns */
+  flex: 33.33%;
+  max-width: 33.33%;
+  padding: 0 10px;
+}
+.pdivflex-gallery-column img {
+  margin-top: 20px;
+  vertical-align: middle;
+  width: 100%;
+}
+@media only screen and (max-width: 850px) {
+  .pdivflex-gallery-column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .pdivflex-gallery-column {
+    flex: 100%;
+    max-width: 100%;
+  }
 }
 
 .pimg-medium {
@@ -817,28 +875,32 @@ p {
 
 /* Call to Action (CTA) Button (Span for centering) */
 .pbutton-center {
-  padding: .75rem 1rem;
+  padding: 0 1rem;
   display: block;
   text-align: center;
-/*margin: 24px 0;*/
+  /*margin: 24px 0;*/
 }
 
 .pbutton {
   background-color: #F9FAFB;
   border: 0;
   border-radius: .5rem;
+  padding: .75rem 1rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+
   box-sizing: border-box;
+  display: inline-block; /* Stops text from breaking */
 
   /*2200cc blue | ECF2F9 gray | F03377 red | #5f41e1 purple*/
   color: #2200cc; /* Originally #111827 */
-/*  font-size: .875rem;*/
+  font-size: inherit;
+  font-family: inherit;
   font-weight: 600;
   line-height: 1.25rem;
-  padding: .75rem 1rem;
   text-align: center;
   text-decoration: none #D1D5DB solid;
   text-decoration-thickness: auto;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -855,8 +917,8 @@ p {
   box-shadow: none;
 }
 
-.ptext .pbutton {
-  text-align: center;
+.ptext button {
+
 }
 
 /*FOOTER*/

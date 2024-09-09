@@ -1,3 +1,44 @@
+// Image Fullscreen on Click when has "data-enlargable" attribute
+// https://stackoverflow.com/questions/18545077/image-fullscreen-on-click/50430187#50430187
+// Note: must be before cursor logic
+
+$('img[data-enlargeable]').addClass('img-enlargeable').click(function() {
+  var src = $(this).attr('src');
+  var modal;
+
+  function removeModal() {
+    modal.remove();
+    $('body').off('keyup.modal-close');
+  }
+
+  modal = $('<div>').css({
+    // (puts image url in place of src)
+    // [FIXED] NOTE: will not work if has certain special characters like a space, (, ), -
+    // background: 'RGBA(0,0,0,.5) url(' + src + ') no-repeat center',
+    // background: 'RGBA(235, 242, 250,.5) url(' + src + ') no-repeat center',
+    background: 'url("' + src + '") no-repeat center, repeating-linear-gradient(45deg, RGBA(235, 242, 250,.7), RGBA(235, 242, 250,.7) 50px, RGBA(255, 255, 255, .7) 50px, RGBA(255, 255, 255, .7) 100px)',
+    backgroundSize: 'contain',
+    width: '100%',
+    height: '100%',
+    position: 'fixed',
+    zIndex: '900',
+    top: '0',
+    left: '0',
+    // cursor: 'zoom-out'
+  }).click(function() {
+    removeModal();
+  }).appendTo('body');
+  //handling ESC
+  $('body').on('keyup.modal-close', function(e) {
+    if (e.key === 'Escape') {
+      removeModal();
+    }
+  });
+});
+
+
+// Custom Cursor Logic
+
 const cursor = document.querySelector(".cursor");
 const cursorwhite = document.querySelector(".cwhite");
 
@@ -29,8 +70,8 @@ function updateCursorPosition() {
 }
 
 // add different classes on events
-// classes for general links (all a)
-const links = document.querySelectorAll("a")
+// classes for general links (all a and enlargable images)
+const links = document.querySelectorAll("a, .img-enlargeable, button");
 links.forEach((link) => {
    link.addEventListener("mouseover", () => {
         isLinkHovered = true; // Set flag to indicate a link is hovered
@@ -231,3 +272,6 @@ function topFunction() {
     document.documentElement.scrollTop = 0;*/
     window.scrollTo({top: 0, behavior: 'smooth'});
 }
+
+
+
