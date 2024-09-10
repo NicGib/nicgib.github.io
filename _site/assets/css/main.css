@@ -859,6 +859,15 @@ p {
   .pimg-medium {
     width: 80%;
   }
+  .pimg-small {
+    width: 80%;
+  }
+  .pimg-tiny {
+    width: 80%;
+  }
+  .pimg-5 {
+    width: 80%;
+  }
   .pdivflex-divided {
     flex-direction: column;
     align-items: center;
@@ -937,7 +946,7 @@ footer {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* Originally center */
 }
 
 .fhider {
@@ -967,7 +976,7 @@ footer {
   
   padding: 10px;
   width: calc(100vw - 50px);
-  height: 90%;
+  height: 92%; /* Originally 90% */
   
   text-align: center;
   
@@ -1066,6 +1075,7 @@ footer a {
 .dividerLine {
   position: absolute;
   left: 50%;
+  top: 15px;
 }
 
 .non-home-footer {
