@@ -848,6 +848,16 @@ p {
   border-radius: 5px;
 }
 
+.pdf-portrait-large {
+  width: auto;
+  height: 90vh; /* changed here */
+  aspect-ratio: 8.5 / 12;
+  margin: 0;
+  padding: 0;
+  border: solid 3px #323639;
+  border-radius: 5px;
+}
+
 .pdf-landscape {
   width: 75vw;
   height: auto;
@@ -856,6 +866,20 @@ p {
   padding: 0;
   border: solid 3px #323639;
   border-radius: 5px;
+}
+
+audio {
+  width: 600px;
+  border: 3px solid #323639;
+  border-radius: 5px;
+  background-color: #f2f3f5;
+}
+
+video {
+  width: 600px;
+  border: 3px solid #323639;
+  border-radius: 5px;
+  background-color: #f2f3f5;
 }
 
 @media only screen and (max-width: 850px) {
@@ -879,9 +903,19 @@ p {
     width: 80%;
     height: auto;
   }
+  .pdf-portrait-large {
+    width: 80%;
+    height: auto;
+  }
   .pdf-landscape {
     width: 80%;
     height: auto;
+  }
+  audio {
+    width: 80%;
+  }
+  video {
+    width: 80%;
   }
 }
 
@@ -927,10 +961,6 @@ p {
 }
 .pbutton:focus-visible {
   box-shadow: none;
-}
-
-.ptext button {
-
 }
 
 /*FOOTER*/
