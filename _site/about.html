@@ -17,6 +17,9 @@
     <!-- GSAP TweenMax CDN (for parallax) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
 
+    <!-- Canvas Confetti for Broncos Button-->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
     <!--FontAwesome-->
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
     <script src="https://kit.fontawesome.com/11abcac906.js" crossorigin="anonymous"></script>
@@ -63,16 +66,21 @@
     <!--<div class="pdivider-small aboutflex-small"></div>-->
 <div class="pdivflex-large aboutflex">
   <div class="about-div2"></div>
+  <div class="about-div3"></div>
   <div class="about-div4"></div>
   <div class="about-div1">
-    <p class="ptext" style="text-align: center; margin-bottom: 20px;"><b>
-      Hello! I'm Nicolas Gibson.</b>
+    <!-- Note! Can't write too much here or will overflow. -->
+    <p class="about-text">
+      <b>Student, Web Developer & Graphic Artist</b>
+      <br>
+      Hi! I'm <em style="color: #F03377;">Nic</em>olas <em style="color: #2200CC;">Gib</em>son, a junior at Santa Clara University.
       <br><br>
-      <em style="color: #B269CF;">Who</em>: a junior at Santa Clara University. also a graphic & web designer, musician, singer, and videogamer.
+      I am passionate about combining graphic design & programming into seamless user experiences for your users. I have worked in UI/UX development, brand identity overhauls, team management, and leadership roles for several educational and recreational organizations. Feel free to reach out--even if just to say hello or to share current music you love--and go <a class="onwhite confetti">Broncos!</a> 🐎
+      <!-- <em style="color: #B269CF;">Who</em>: a junior at Santa Clara University. also a graphic & web designer, musician, singer, and videogamer.
       <br><br>
       <em style="color: #2200CC;">What I love</em>: pixels, music theory, html & css, graphic design, typography, and my pomeranian (+ cats too).
       <br><br>
-      <em style="color: #F03377;">Where</em>: currently based in Redwood City, CA.
+      <em style="color: #F03377;">Where</em>: currently based in Redwood City, CA. -->
     </p>
   </div>
   <div class="about-div5" style="background-image: url(assets/img/0-Gen/TEMP-NProfilePic.png);">
@@ -82,7 +90,86 @@
       <a href="https://github.com/NicGib" target="blank" class="icon"><div><i class="fa fa-github fa-5x"></i></div></a>
     </div>
   </div>
-  <div class="about-div3"></div>
 </div>
+
+<script type="text/javascript">
+  // Listens for the 'DOMContentLoaded' event to ensure the HTML is fully loaded before running the script.
+  document.addEventListener('DOMContentLoaded', function() {
+
+    // Selects the first element with the class '.confetti-button' as the target button.
+    const button = document.querySelector('.confetti');  // You can change the class, just make sure it is defined in the module also.  
+
+    // Adds an event listener for the 'click' event on the targeted button.
+    button.addEventListener('click', function(event) {
+      // Retrieves the position and size of the button to calculate where the confetti should appear.
+      const rect = button.getBoundingClientRect();
+
+      // Calculates the horizontal (x) center of the button.
+      const x = (rect.left + rect.right) / 2;
+
+      // Calculates the vertical (y) center of the button.
+      const y = (rect.top + rect.bottom) / 2;
+
+      // go Broncos!
+      var colors = ['#b30738', '#ddcba4' ,'#000000'];
+      var scalar = 2;
+      var bronco = confetti.shapeFromText({ text: '🐎', scalar });
+
+      // Configures the settings for the confetti effect.
+      const confettiSettings1a = {
+        particleCount: 20, // Defines the number of confetti particles.
+        angle: 60,
+        spread: 55,         // Sets the spread angle of the confetti.
+        // Specifies the origin point for the confetti effect based on the button's location.
+        //origin: { x: x / window.innerWidth, y: y / window.innerHeight }
+        origin: { x: 0 },
+        shapes: [bronco],
+        scalar,
+        disableForReducedMotion: true,
+        colors: colors
+      };
+      const confettiSettings1b = {
+        particleCount: 20, // Defines the number of confetti particles.
+        angle: 60,
+        spread: 55,         // Sets the spread angle of the confetti.
+        // Specifies the origin point for the confetti effect based on the button's location.
+        //origin: { x: x / window.innerWidth, y: y / window.innerHeight }
+        origin: { x: 0 },
+        shapes: ['circle'],
+        disableForReducedMotion: true,
+        colors: colors
+      };
+      const confettiSettings2a = {
+        particleCount: 20, // Defines the number of confetti particles.
+        angle: 120,
+        spread: 55,         // Sets the spread angle of the confetti.
+        // Specifies the origin point for the confetti effect based on the button's location.
+        //origin: { x: x / window.innerWidth, y: y / window.innerHeight }
+        origin: { x: 1 },
+        shapes: [bronco],
+        scalar,
+        disableForReducedMotion: true,
+        colors: colors
+      };
+      const confettiSettings2b = {
+        particleCount: 20, // Defines the number of confetti particles.
+        angle: 120,
+        spread: 55,         // Sets the spread angle of the confetti.
+        // Specifies the origin point for the confetti effect based on the button's location.
+        //origin: { x: x / window.innerWidth, y: y / window.innerHeight }
+        origin: { x: 1 },
+        shapes: ['circle'],
+        disableForReducedMotion: true,
+        colors: colors
+      };
+
+      // Triggers the confetti effect with the defined settings when the button is clicked.
+      confetti(confettiSettings1a);
+      confetti(confettiSettings1b);
+      confetti(confettiSettings2a);
+      confetti(confettiSettings2b);
+    });
+  });
+</script>
   </body>
 </html>

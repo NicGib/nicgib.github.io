@@ -102,12 +102,68 @@ body {
    transition: background-color 0.2s linear;
 }
 
-@media only screen and (max-width: 425px) { /*Phone: no cursor*/
+/*Tablet & Phone Portrait: no cursor*/ /* Originally 425px */
+@media only screen and (max-width: 768px)
+ and (orientation: portrait) {
   .cursor {
     display: none;
+    pointer-events: auto;
   }
   .cwhite {
     display: none;
+    pointer-events: auto;
+  }
+  * {
+    cursor: default;
+  }
+}
+
+@media only screen and (max-width: 932px)
+ and (orientation: landscape) { 
+  .cursor {
+    display: none;
+    pointer-events: auto;
+  }
+  .cwhite {
+    display: none;
+    pointer-events: auto;
+  }
+  * {
+    cursor: default;
+  }
+}
+
+/* iPad Pros (1024px and 1366px) */
+
+@media only screen
+ and (min-device-width: 1024px)
+ and (max-device-width: 1024px)
+ and (orientation: portrait)
+ and (-webkit-min-device-pixel-ratio: 2) {
+  .cursor {
+    display: none;
+    pointer-events: auto;
+  }
+  .cwhite {
+    display: none;
+    pointer-events: auto;
+  }
+  * {
+    cursor: default;
+  }
+}
+@media only screen
+ and (min-device-width: 1366px)
+ and (max-device-width: 1366px)
+ and (orientation: landscape)
+ and (-webkit-min-device-pixel-ratio: 2) {
+  .cursor {
+    display: none;
+    pointer-events: auto;
+  }
+  .cwhite {
+    display: none;
+    pointer-events: auto;
   }
   * {
     cursor: default;
@@ -700,9 +756,9 @@ p {
   justify-content: flex-start;
   align-items: flex-start; /*customize to be centered on specific divs*/
 }
-.pdivflex-gallery-column { /* By default: 3 columns */
-  flex: 33.33%;
-  max-width: 33.33%;
+.pdivflex-gallery-column { /* Has to be 4 columns for no awkward gaps */
+  flex: 25%;
+  max-width: 25%;
   padding: 0 10px;
 }
 .pdivflex-gallery-column img {
@@ -711,13 +767,13 @@ p {
   width: 100%;
 }
 @media only screen and (max-width: 850px) {
-  .pdivflex-gallery-column {
+  .pdivflex-gallery-column { /* 2 column layout */
     flex: 50%;
     max-width: 50%;
   }
 }
 @media only screen and (max-width: 600px) {
-  .pdivflex-gallery-column {
+  .pdivflex-gallery-column { /* 1 column layout */
     flex: 100%;
     max-width: 100%;
   }
@@ -838,6 +894,16 @@ p {
     left: calc(100% - 75%);
 }
 
+.pdf-portrait-third {
+  width: 30vw; /* changed here */
+  height: auto; /* changed here */
+  aspect-ratio: 8.5 / 12;
+  margin: 0;
+  padding: 0;
+  border: solid 3px #323639;
+  border-radius: 5px;
+}
+
 .pdf-portrait {
   width: auto;
   height: 75vh;
@@ -900,6 +966,10 @@ video {
     flex-direction: column;
     align-items: center;
   }
+  .pdf-portrait-third {
+    width: 80%;
+    height: auto;
+  }
   .pdf-portrait {
     width: 80%;
     height: auto;
@@ -933,6 +1003,7 @@ video {
   border: 0;
   border-radius: .5rem;
   padding: .75rem 1rem;
+  margin: 10px 0;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 
   box-sizing: border-box;
@@ -1123,7 +1194,16 @@ footer a {
   border-top: none;
 }
 
-/*About Page*/
+/* About Page */
+
+/* About text */
+.about-text {
+  color: #000000;
+  padding: 0 30px;
+  text-align: center;
+  font-family: 'Space Mono', monospace;
+  font-weight: 300;
+}
 
 /*top divider*/
 .about-divider {
@@ -1142,11 +1222,18 @@ footer a {
   background: linear-gradient(90deg, rgba(34,0,204,1) 0%, rgba(95,64,224,1) 35%, rgba(240,51,119,1) 100%);
 }
 
-.about-div1 {
+.about-div1 { /* White circle (contains text) */
   background-color: #ECF2F9;
   border-radius: 50%;
-  width: calc(100vh - 120px);
-  height: calc(100vh - 120px);
+  /*width: calc(100vh - 120px);
+  height: calc(100vh - 120px);*/
+  max-width: calc(100vh - 120px);
+  width: calc(100vw - 120px);
+  min-width: 350px;
+
+  max-height: calc(100vh - 120px);
+  height: calc(100vw - 120px);
+  min-height: 350px;
   
   display: flex;
   justify-content: center;
@@ -1156,23 +1243,31 @@ footer a {
   z-index: 10;
 }
 
-.about-div2 {
+.about-div2 { /*Purple circle*/
   background-color: #5F40E0;
   border-radius: 50%;
-  width: calc(100vh - 120px);
-  height: calc(100vh - 120px);
+  /*width: calc(100vh - 120px);
+  height: calc(100vh - 120px);*/
+  max-width: calc(100vh - 120px);
+  width: calc(100vw - 120px);
+  max-height: calc(100vh - 120px);
+  height: calc(100vw - 120px);
   
   position: absolute;
   left: 20px;
-  z-index: 2;
+  z-index: 3;
   
 }
 
-.about-div3 {
+.about-div3 { /*Red circle*/
   background-color: #F03377;
   border-radius: 50%;
-  width: calc(100vh - 120px);
-  height: calc(100vh - 120px);
+  /*width: calc(100vh - 120px);
+  height: calc(100vh - 120px);*/
+  max-width: calc(100vh - 120px);
+  width: calc(100vw - 120px);
+  max-height: calc(100vh - 120px);
+  height: calc(100vw - 120px);
   
   position: absolute;
   right: 20px;
@@ -1180,30 +1275,41 @@ footer a {
   
 }
 
-.about-div4 {
+.about-div4 { /*Border circle*/
   background: rgb(95,64,224);
   background: linear-gradient(90deg, rgba(95,64,224,1) 15%, rgba(240,51,119,1) 100%);
   border-radius: 50%;
-  width: calc(100vh - 100px);
-  height: calc(100vh - 100px);
+  /*width: calc(100vh - 100px);
+  height: calc(100vh - 100px);*/
+  max-width: calc(100vh - 100px);
+  width: calc(100vw - 100px);
+  min-width: 370px; /* 20 more pixels than about-div1 */
+
+  max-height: calc(100vh - 100px);
+  height: calc(100vw - 100px);
+  min-height: 370px; /* 20 more pixels than about-div1 */
+  
   
   position: absolute;
   z-index: 4;
 }
 
-.about-div5 {
+.about-div5 { /*Small circle*/
   background-color: #ECF2F9;
-  box-shadow: inset 10em 10em rgba(236, 242, 249, 0.75);
+  box-shadow: inset 30em 30em rgba(236, 242, 249, 0.40);
   
   /*background-image: url("https://cdn.glitch.com/495005c3-fbd4-40ec-9078-f8aa56af48b9%2FCowProfilePic-export(3).png?v=1627689039077");*/
   background-repeat: no-repeat;
-  background-size: auto calc(45vh - 140px);
+  /*background-size: auto calc(45vh - 140px);*/
+  background-size: cover;
   background-position: 50% 0px;
   
   border: 10px solid #ECF2F9;
   border-radius: 50%;
   width: calc(45vh - 120px);
+  min-width: 200px;
   height: calc(45vh - 120px);
+  min-height: 200px;
   
   display: flex;
   justify-content: center;
@@ -1216,6 +1322,65 @@ footer a {
   z-index: 10;
 }
 
+
+@media only screen and (max-width: 800px) {
+  .aboutflex {
+    padding-top: 10px;
+    justify-content: flex-start;
+  }
+  .about-div1 {
+    padding: 0 2vw;
+    margin-top: 10px;
+  }
+  .about-div2 {
+    margin-top: 10px;
+  }
+  .about-div3 {
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 800px) 
+  and (max-height: 500px) {
+  .aboutflex {
+    justify-content: center;
+  }
+  .about-div1 {
+    padding: 0 2vw;
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 600px) 
+  and (min-height: 670px) {
+  .about-div5 {
+    right: unset; /* Moves it to the center */
+  }
+}
+
+@media only screen and (max-width: 700px) 
+  and (max-height: 700px) {
+  .about-div5 {
+    display: none;
+  }
+}
+
+@media only screen and (max-height: 650px) {
+  .about-text {
+    font-size: 0.7em;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .about-text {
+    font-size: 0.7em;
+  }
+  .about-div1 {
+    padding: 0 0;
+    margin-top: 10px;
+  }
+}
+
 .about-iconflex {
   position: absolute;
   width: 50%;
@@ -1226,4 +1391,16 @@ footer a {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
+}
+
+.about-iconflex .icon {
+  /*color: #ffffff;*/
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.30);
+}
+
+.confetti {
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
