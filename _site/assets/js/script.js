@@ -237,6 +237,7 @@ $(window).resize(function() {
 
 $(window).scroll(function(){
     var landingLogo = $(".landingLogo");
+    var landingLogoHidden = $(".landingLogoHidden");
 
     var landingBody = $("#blackHomeContainer");
 
@@ -248,11 +249,17 @@ $(window).scroll(function(){
         var toCross_height = landingBody.height();
 
         if (fixed_position + fixed_height  < toCross_position) {
-            landingLogo.removeClass('invertLogo');
+            //landingLogo.removeClass('invertLogo');
+            landingLogo.css("visibility", "visible");
+            landingLogoHidden.css("visibility", "hidden");
         } else if (fixed_position > toCross_position + toCross_height) {
-            landingLogo.removeClass('invertLogo');
+            //landingLogo.removeClass('invertLogo');
+            landingLogo.css("visibility", "visible");
+            landingLogoHidden.css("visibility", "hidden");
         } else {
-            landingLogo.addClass('invertLogo');
+            //landingLogo.addClass('invertLogo');
+            landingLogo.css("visibility", "hidden");
+            landingLogoHidden.css("visibility", "visible");
         }
     }
 

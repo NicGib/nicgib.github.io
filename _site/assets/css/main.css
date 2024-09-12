@@ -306,16 +306,21 @@ p {
 }
 
 .landingLogo {
+  visibility: visible;
   /*fill: #2200CC;*/
 
   /* Blue: #2200CC hsl(250, 100%, 40%) */
-  -webkit-filter: invert(16%) sepia(100%) saturate(5241%) hue-rotate(255deg) brightness(71%) contrast(146%);
+  /*-webkit-filter: invert(16%) sepia(100%) saturate(5241%) hue-rotate(255deg) brightness(71%) contrast(146%);
   filter: invert(16%) sepia(100%) saturate(5241%) hue-rotate(255deg) brightness(71%) contrast(146%);
-  
+  */
   /* From https://isotropic.co/tool/hex-color-to-css-filter/ */
 }
 
-.invertLogo {
+.landingLogoHidden {
+  visibility: hidden;
+}
+
+.invertLogo { /* UNUSED */
   /*fill: #ECF2F9;*/ /* fallback gray */
   /*fill: url(#logoGradient);*/
 
@@ -324,9 +329,9 @@ p {
   /* filter: grayscale(1) invert(1);*/
 
   /* Gray: #ECF2F9 */
-  -webkit-filter: invert(84%) sepia(25%) saturate(193%) hue-rotate(193deg) brightness(110%) contrast(95%);
+  /*-webkit-filter: invert(84%) sepia(25%) saturate(193%) hue-rotate(193deg) brightness(110%) contrast(95%);
   filter: invert(84%) sepia(25%) saturate(193%) hue-rotate(193deg) brightness(110%) contrast(95%);
-  
+  */
   /* Red: #F03377 hsl(338, 86%, 57%) */
   /*filter: invert(32%) sepia(49%) saturate(3562%) hue-rotate(319deg) brightness(96%) contrast(96%);*/
   
@@ -335,6 +340,15 @@ p {
 
 .svg-glasses-link {
   /*Takes to home page*/
+}
+
+.about-logo {
+  position: fixed;
+  top: -10px; /* Originally 24px */
+  right: 25px; /* Originally 20px */
+  /*width: 89px;*/
+  /*height: 53px;*/
+  z-index: 100;
 }
 
 .about-link {
