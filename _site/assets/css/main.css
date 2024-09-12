@@ -305,6 +305,25 @@ p {
   z-index: 100;
 }
 
+.landingLogo {
+  /* Blue: #2200CC hsl(250, 100%, 40%) */
+  filter: invert(16%) sepia(100%) saturate(5241%) hue-rotate(255deg) brightness(71%) contrast(146%);
+  /* From https://isotropic.co/tool/hex-color-to-css-filter/ */
+}
+
+.invertLogo {
+  /* Originally blue: #2200CC hsl(250, 100%, 40%)*/
+
+  /* filter: grayscale(1) invert(1);*/
+
+  /* Gray: #ECF2F9 */
+  filter: invert(84%) sepia(25%) saturate(193%) hue-rotate(193deg) brightness(110%) contrast(95%);
+  /* Red: #F03377 hsl(338, 86%, 57%) */
+/*  filter: invert(32%) sepia(49%) saturate(3562%) hue-rotate(319deg) brightness(96%) contrast(96%);*/
+  
+  /* From https://isotropic.co/tool/hex-color-to-css-filter/ */
+}
+
 .svg-glasses-link {
   /*Takes to home page*/
 }
@@ -1241,6 +1260,7 @@ footer a {
   
   overflow: hidden;
   z-index: 10;
+  transition: border-radius 0.2s;
 }
 
 .about-div2 { /*Purple circle*/
@@ -1292,6 +1312,7 @@ footer a {
   
   position: absolute;
   z-index: 4;
+  transition: border-radius 0.2s;
 }
 
 .about-div5 { /*Small circle*/
@@ -1322,6 +1343,9 @@ footer a {
   z-index: 10;
 }
 
+.about-socials {
+  display: none;
+}
 
 @media only screen and (max-width: 800px) {
   .aboutflex {
@@ -1351,7 +1375,7 @@ footer a {
   }
 }
 
-@media only screen and (max-width: 600px) 
+@media only screen and (max-width: 700px) 
   and (min-height: 670px) {
   .about-div5 {
     right: unset; /* Moves it to the center */
@@ -1363,34 +1387,51 @@ footer a {
   .about-div5 {
     display: none;
   }
-}
-
-@media only screen and (max-height: 650px) {
-  .about-text {
-    font-size: 0.7em;
+  .about-socials {
+    display: inline;
+  }
+  .aboutflex {
+    justify-content: center;
   }
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-height: 700px) {
+  .about-text {
+    font-size: 0.7em;
+  }
+  .about-div1 {
+    border-radius: 20%;
+  }
+  .about-div4 {
+    border-radius: 20%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
   .about-text {
     font-size: 0.7em;
   }
   .about-div1 {
     padding: 0 0;
     margin-top: 10px;
+    border-radius: 20%;
+  }
+  .about-div4 {
+    border-radius: 20%;
   }
 }
 
 .about-iconflex {
   position: absolute;
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: 100%;
   
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 }
 
 .about-iconflex .icon {

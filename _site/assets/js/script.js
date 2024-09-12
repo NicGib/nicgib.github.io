@@ -233,18 +233,41 @@ $(window).resize(function() {
     initParallaxBasedOnWindowSize(); // Recheck window size on resize and switch modes if necessary
 });
 
+// .landingLogo color change on scroll
+
+$(window).scroll(function(){
+    var landingLogo = $(".landingLogo");
+
+    var landingBody = $("#blackHomeContainer");
+
+    if (landingLogo.length && landingBody.length) { //If landingLogo & landingBody exist:
+        var fixed_position = landingLogo.offset().top;
+        var fixed_height = landingLogo.height();
+
+        var toCross_position = landingBody.offset().top;
+        var toCross_height = landingBody.height();
+
+        if (fixed_position + fixed_height  < toCross_position) {
+            landingLogo.removeClass('invertLogo');
+        } else if (fixed_position > toCross_position + toCross_height) {
+            landingLogo.removeClass('invertLogo');
+        } else {
+            landingLogo.addClass('invertLogo');
+        }
+    }
+
+});
 
 
 //Footer Hide & Back To Top
 let mybutton = document.getElementById("myBtn");
-
 let isHomeFooter = document.getElementsByClassName('fhider');
 
 window.onscroll = function() {myFunction()};
 
 function myFunction() {
     //Footer Hide
-    if (isHomeFooter.length > 0) { //If page is has the home footer
+    if (isHomeFooter.length > 0) { //If page has the home footer
       if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
         document.getElementById("fhiderid").style.zIndex = "-4";
         document.getElementById("footerid").style.zIndex = "2";
@@ -256,13 +279,13 @@ function myFunction() {
 
     //Back to top button
     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-    /*mybutton.style.display = "flex";*/
-    /*mybutton.style.justify-content = "center";
-    mybutton.style.align-items = "center";*/
-    mybutton.style.opacity = "1"
+        /*mybutton.style.display = "flex";*/
+        /*mybutton.style.justify-content = "center";
+        mybutton.style.align-items = "center";*/
+        mybutton.style.opacity = "1"
     } else {
-    /*mybutton.style.display = "none";*/
-    mybutton.style.opacity = "0"
+        /*mybutton.style.display = "none";*/
+        mybutton.style.opacity = "0"
     }
 }
 
