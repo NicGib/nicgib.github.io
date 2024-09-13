@@ -9,6 +9,15 @@ $('img[data-enlargeable]').addClass('img-enlargeable').click(function() {
   function removeModal() {
     modal.remove();
     $('body').off('keyup.modal-close');
+
+    // Reset cursor when modal is removed
+        isLinkHovered = false; // Reset flag
+        cursor.classList.remove('link');
+        cursorwhite.classList.remove('link');
+        // scale down
+        TweenMax.to(cursor, 0.05, { width: 10, height: 10, ease: Power2.easeIn });
+        TweenMax.to(cursorwhite, 0.2, { width: 20, height: 20, ease: Power2.easeIn });
+        updateCursorPosition(); // Adjust position on size change
   }
 
   modal = $('<div>').css({
@@ -28,6 +37,31 @@ $('img[data-enlargeable]').addClass('img-enlargeable').click(function() {
   }).click(function() {
     removeModal();
   }).appendTo('body');
+
+  // Add a small 'x' button for closing
+var closeButton;
+closeButton = $('<div>')
+  .addClass('closeButton')
+  .text('✖') // "x" character
+  .css({
+    position: 'absolute',
+    top: 'calc(50% - 15px)',
+    right: '30px',
+    fontSize: '30px',
+    color: '#ECF2F9',
+    zIndex: '901', // Ensures the "x" stays on top of the image
+    width: '50px',
+    height: '50px',
+    paddingBottom: '2px',
+    backgroundColor: 'rgba(0, 0, 0, 0.7)', // Black circle with 50% opacity
+    borderRadius: '50%', // Makes it a circle
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center' // Centers the "x" inside the circle
+  }).click(function() {
+    removeModal();
+  }).appendTo(modal);
+
   //handling ESC
   $('body').on('keyup.modal-close', function(e) {
     if (e.key === 'Escape') {
@@ -71,27 +105,51 @@ function updateCursorPosition() {
 
 // add different classes on events
 // classes for general links (all a and enlargable images)
-const links = document.querySelectorAll("a, .img-enlargeable, button");
-links.forEach((link) => {
-   link.addEventListener("mouseover", () => {
-        isLinkHovered = true; // Set flag to indicate a link is hovered
-        cursor.classList.add('link');
-        cursorwhite.classList.add('link');
-        //scale up
-        TweenMax.to(cursor, 0.05, { width: 60, height: 60, ease: Power4.easeOut });
-        TweenMax.to(cursorwhite, 0.4, { width: 70, height: 70, ease: Power4.easeOut });
-        updateCursorPosition(); // Adjust position on size change
-   })
-   link.addEventListener("mouseout", () => {
-        isLinkHovered = false; // Reset flag when leaving a link
-        cursor.classList.remove('link');
-        cursorwhite.classList.remove('link');
-        //scale down
-        TweenMax.to(cursor, 0.05, { width: 10, height: 10, ease: Power2.easeIn });
-        TweenMax.to(cursorwhite, 0.2, { width: 20, height: 20, ease: Power2.easeIn });
-        updateCursorPosition(); // Adjust position on size change
-   })
-})
+const links = document.querySelectorAll("a, .img-enlargeable, button, .closeButton");
+document.addEventListener("mouseover", (event) => {
+   if (event.target.closest("a, .img-enlargeable, button, .closeButton")) {
+       isLinkHovered = true; // Set flag to indicate a link is hovered
+       cursor.classList.add('link');
+       cursorwhite.classList.add('link');
+       // scale up
+       TweenMax.to(cursor, 0.05, { width: 60, height: 60, ease: Power4.easeOut });
+       TweenMax.to(cursorwhite, 0.4, { width: 70, height: 70, ease: Power4.easeOut });
+       updateCursorPosition(); // Adjust position on size change
+   }
+});
+document.addEventListener("mouseout", (event) => {
+   if (event.target.closest("a, .img-enlargeable, button, .closeButton")) {
+       isLinkHovered = false; // Reset flag when leaving a link
+       cursor.classList.remove('link');
+       cursorwhite.classList.remove('link');
+       // scale down
+       TweenMax.to(cursor, 0.05, { width: 10, height: 10, ease: Power2.easeIn });
+       TweenMax.to(cursorwhite, 0.2, { width: 20, height: 20, ease: Power2.easeIn });
+       updateCursorPosition(); // Adjust position on size change
+   }
+});
+
+/* This way doesn't update for dynamically created links. */
+// links.forEach((link) => {
+//    link.addEventListener("mouseover", () => {
+//         isLinkHovered = true; // Set flag to indicate a link is hovered
+//         cursor.classList.add('link');
+//         cursorwhite.classList.add('link');
+//         //scale up
+//         TweenMax.to(cursor, 0.05, { width: 60, height: 60, ease: Power4.easeOut });
+//         TweenMax.to(cursorwhite, 0.4, { width: 70, height: 70, ease: Power4.easeOut });
+//         updateCursorPosition(); // Adjust position on size change
+//    })
+//    link.addEventListener("mouseout", () => {
+//         isLinkHovered = false; // Reset flag when leaving a link
+//         cursor.classList.remove('link');
+//         cursorwhite.classList.remove('link');
+//         //scale down
+//         TweenMax.to(cursor, 0.05, { width: 10, height: 10, ease: Power2.easeIn });
+//         TweenMax.to(cursorwhite, 0.2, { width: 20, height: 20, ease: Power2.easeIn });
+//         updateCursorPosition(); // Adjust position on size change
+//    })
+// })
 
 // Scale up on mouse press (mousedown), scale down on release (mouseup)
 document.addEventListener("mousedown", () => {
@@ -248,7 +306,7 @@ $(window).scroll(function(){
         var toCross_position = landingBody.offset().top;
         var toCross_height = landingBody.height();
 
-        if (fixed_position + fixed_height  < toCross_position) {
+        if (fixed_position + fixed_height < toCross_position) {
             //landingLogo.removeClass('invertLogo');
             landingLogo.css("visibility", "visible");
             landingLogoHidden.css("visibility", "hidden");

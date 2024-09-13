@@ -761,6 +761,10 @@ p {
   /* Used in script.js for cursor */
 }
 
+.closeButton {
+  /* Used in script.js for cursor */
+}
+
 .pimg-large {
   margin: none;
   background-color: #ECF2F9;
@@ -917,6 +921,7 @@ p {
 
   /*text-shadow: 1px 1px 3px #000000;*/
   margin: 10px 0 15px 0;
+  padding: 0 30px;
   font-style: normal;
   font-family: 'Space Grotesk', sans-serif;
   font-weight: normal;
@@ -1099,6 +1104,10 @@ footer {
   align-items: flex-start; /* Originally center */
 }
 
+.home-footer {
+  outline: #000000 solid 5px;  
+}
+
 .fhider {
   z-index: -1;
   width: 100%;
@@ -1106,6 +1115,8 @@ footer {
   background-color: rgba(236, 242, 249, 1);
   bottom: 0px;
   position: fixed;
+
+  outline: #ECF2F9 solid 5px;
 }
 
 .fplaceholder {
