@@ -1482,3 +1482,18 @@ footer a {
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* Standard */
 }
+
+.copyright {
+  font-size: 0.7em;
+  font-weight: 700;
+  color: #000000;
+
+  position: absolute;
+  bottom: 20px;
+  right: 35px;
+}
+
+.project-copyright {
+  bottom: 30px;
+  color: #2200cc;
+}
