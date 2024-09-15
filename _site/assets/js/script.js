@@ -42,7 +42,7 @@ $('img[data-enlargeable]').addClass('img-enlargeable').click(function() {
 var closeButton;
 closeButton = $('<div>')
   .addClass('closeButton')
-  .text('✖') // "x" character
+  //.text('✖') "x" character
   .css({
     position: 'absolute',
     top: 'calc(50% - 15px)',
@@ -52,7 +52,6 @@ closeButton = $('<div>')
     zIndex: '901', // Ensures the "x" stays on top of the image
     width: '50px',
     height: '50px',
-    paddingBottom: '2px',
     backgroundColor: 'rgba(0, 0, 0, 0.7)', // Black circle with 50% opacity
     borderRadius: '50%', // Makes it a circle
     display: 'flex',
@@ -62,6 +61,16 @@ closeButton = $('<div>')
     removeModal();
   }).appendTo(modal);
 
+  var closeIconSvg = `
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="18" y1="6" x2="6" y2="18"></line>
+  <line x1="6" y1="6" x2="18" y2="18"></line>
+</svg>
+`;
+
+// Append the SVG to the close button
+closeButton.append(closeIconSvg);
+
   //handling ESC
   $('body').on('keyup.modal-close', function(e) {
     if (e.key === 'Escape') {
@@ -69,6 +78,8 @@ closeButton = $('<div>')
     }
   });
 });
+
+
 
 
 // Custom Cursor Logic

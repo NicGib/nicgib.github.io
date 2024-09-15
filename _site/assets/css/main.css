@@ -612,14 +612,14 @@ p {
   background: linear-gradient(-45deg, rgba(0,0,0,0) 0%, rgba(255,255,255,0.30) 50%, rgba(0,0,0,0) 100%);
   mix-blend-mode: color-dodge;
 
-  animation: gradient-marquee 6s linear infinite;
+  animation: gradient-marquee 5s linear infinite;
 }
 
 .grad1 {
-  animation: gradient-marquee-1 6s linear infinite;
+  animation: gradient-marquee-1 5s linear infinite;
 }
 .grad2 {
-  animation: gradient-marquee-2 6s linear infinite;
+  animation: gradient-marquee-2 5s linear infinite;
 }
 
 @keyframes gradient-marquee-1 {
