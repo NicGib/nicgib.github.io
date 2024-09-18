@@ -1351,7 +1351,7 @@ footer a {
 
 .about-div5 { /*Small circle*/
   background-color: #ECF2F9;
-  box-shadow: inset 30em 30em rgba(236, 242, 249, 0.40);
+/*  box-shadow: inset 30em 30em rgba(236, 242, 249, 0.40);*/
   
   /*background-image: url("https://cdn.glitch.com/495005c3-fbd4-40ec-9078-f8aa56af48b9%2FCowProfilePic-export(3).png?v=1627689039077");*/
   background-repeat: no-repeat;
@@ -1375,10 +1375,17 @@ footer a {
   bottom: 20px;
   
   z-index: 10;
+  transition: transform 0.5s ease;
+}
+
+.about-div5:hover {
+  transform: rotate(3deg);
+  -webkit-transform: rotate(3deg);
 }
 
 .about-socials {
-  display: none;
+/*  display: none;*/
+  display: inline;
 }
 
 @media only screen and (max-width: 800px) {
@@ -1421,9 +1428,9 @@ footer a {
   .about-div5 {
     display: none;
   }
-  .about-socials {
+  /*.about-socials {
     display: inline;
-  }
+  }*/
   .aboutflex {
     justify-content: center;
   }
@@ -1465,7 +1472,7 @@ footer a {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 120px;
 }
 
 .about-iconflex .icon {
