@@ -1219,17 +1219,21 @@ footer a {
 .iconflex {
   position: absolute;
   right: 50px;
+  top: 160;
+  max-height: 250px;
   
   display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  gap: 1em;
 }
 
-.iconnameflex {
+.iconnameflex { /* UNUSED */
   position: absolute;
-  right: 160px;
+  right: 50px;
+  top: 160px;
   font-size: 0.5em;
   
   display: flex;
@@ -1237,6 +1241,7 @@ footer a {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: flex-end;
+  gap: 1em;
 }
 
 .ftextflex {
@@ -1257,15 +1262,31 @@ footer a {
   font-style: italic;
 }
 
-@media only screen and (max-width: 500px) {
+
+@media only screen and (max-width: 750px) {
+  .iconflex {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 545px) { /* Originally 500px */
+  .iconflex {
+    /*right: 10%; */ /* UNUSED */
+    display: none;
+  }
   .iconnameflex {
     display: none;
   }
-  .iconflex {
-    right: 10%;
+  .dividerLine {
+    display: none;
   }
   .ftextflex {
+    position: relative;
+    left: unset;
+    text-align: center;
     font-size: 10px;
+    width: 80%;
+    padding-left: unset;
   }
 }
 
@@ -1277,6 +1298,8 @@ footer a {
     display: none;
   }
   .ftextflex {
+    position: relative;
+    left: unset;
     text-align: center;
     width: 65%;
   }
