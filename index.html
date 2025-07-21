@@ -7,11 +7,37 @@ layout: landing
   <img src="assets/img/0-Gen/NICGIB-DisplayText_v1-1.png" width="80%" height="auto" style="margin-left: 10px; z-index: 3;" class="titleParallax tP1" draggable="false">
   <img src="assets/img/0-Gen/NICGIB-DisplayText_v1-2.png" width="80%" height="auto" style="margin-left: 10px; z-index: 1;" class="titleParallax tP2" draggable="false">
   <img src="assets/img/0-Gen/NICGIB-DisplayText_v1-3.png" width="80%" height="auto" style="margin-left: 10px; z-index: 2;" class="titleParallax tP3" draggable="false">
-  <img src="https://cdn.glitch.com/495005c3-fbd4-40ec-9078-f8aa56af48b9%2Fdown-arrow-svgrepo-com%20(1).svg?v=1627341145222" width="100px" height="100px" class="svg-arrow" draggable="false">
+  <a href="#blackHomeContainer" id="arrowLink" class="arrow-disabled" draggable="false">
+    <img id="animatedArrow" class="svg-arrow" src="https://cdn.glitch.com/495005c3-fbd4-40ec-9078-f8aa56af48b9%2Fdown-arrow-svgrepo-com%20(1).svg?v=1627341145222" width="100px" height="100px" draggable="false">
+  </a>
+  <script>
+    window.addEventListener("load", () => {
+      const arrow = document.getElementById("animatedArrow");
+      const link = document.getElementById("arrowLink");
+
+      // trigger animation after 3s
+      setTimeout(() => {
+        arrow.classList.add("anim-fadeindown");
+
+        // enable link once animation starts
+        link.classList.remove("arrow-disabled");
+      }, 3000);
+    });
+
+    document.getElementById("arrowLink").addEventListener("click", function (e) {
+      e.preventDefault(); // prevent default jump
+      const target = document.getElementById("blackHomeContainer");
+
+      target.scrollIntoView({
+        behavior: "smooth"
+      });
+    });
+  </script>
 </div>
 
 <div class="home-container">
-  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1440 320" style="margin-bottom: -1px; z-index: 10;"><path fill="#000000" fill-opacity="1" d="M0,288L60,261.3C120,235,240,181,360,170.7C480,160,600,192,720,186.7C840,181,960,139,1080,138.7C1200,139,1320,181,1380,202.7L1440,224L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+  <canvas id="liquid-divider"></canvas>
+  <!-- <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1440 320" style="margin-bottom: -1px; z-index: 10;"><path fill="#000000" fill-opacity="1" d="M0,288L60,261.3C120,235,240,181,360,170.7C480,160,600,192,720,186.7C840,181,960,139,1080,138.7C1200,139,1320,181,1380,202.7L1440,224L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg> -->
   <div class="black-home-container" id="blackHomeContainer">
     <div class="home-grid">
 
@@ -24,24 +50,24 @@ layout: landing
         </div>
       </div>
 
-      <a href="project-gdtc.html">
-        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Gen/SCDI-3.JPG); background-position: center;">
+      <a href="project-gdtc.html" draggable="false">
+        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Projects/GDTC.png);">
           <h2>GDTC & NicaAgua</h2><p>Web Design (TerminalFour)</p><p class="gitem-date">2024-Present</p>
         </div>
       </a>
-      <a href="project-relif.html">
-        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/RELIF/3.jpg); background-size: 150%;">
+      <a href="project-relif.html" draggable="false">
+        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Projects/RELIF.png);"> <!-- originally background-size: 150%;-->
           <h2>RELIF & REBRIF</h2><p>Web Design (cPanel)</p><p class="gitem-date">2023-Present</p>
         </div>
       </a>
-      <a href="project-vocalicious.html">
-        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/Vocalicious/VocaliciousWinterConcertGroupPicture.jpg); background-position: center;">
-          <h2>Vocalicious SCU (A Cappella)</h2><p>Branding & Logo Revamp + Social Media Management</p><p class="gitem-date">2023-Present</p>
+      <a href="project-vocalicious.html" draggable="false">
+        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Projects/Vocalicious.png); background-position: center;">
+          <h2>Vocalicious</h2><p>Acappella Branding, Content, & Web Design</p><p class="gitem-date">2023-Present</p>
         </div>
       </a>
-      <a href="project-theredwood.html">
-        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/TheRedwood/Insta1.jpg);">
-          <h2>The Redwood Yearbook</h2><p>Page Design</p><p class="gitem-date">2022-Present</p>
+      <a href="project-theredwood.html" draggable="false">
+        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Projects/TheRedwood.png);">
+          <h2>The Redwood</h2><p>Yearbook Page Design + Leadership</p><p class="gitem-date">2022-Present</p>
         </div>
       </a>
 
@@ -54,39 +80,44 @@ layout: landing
         </div>
       </div>
 
-      <a href="project-h4h.html">
-        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/H4H/DisasterQuestThumbnail.jpg); background-position: center;">
+      <a href="project-h4h.html" draggable="false">
+        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Projects/H4H.png);">
           <h2>Disaster Quest</h2><p>Hack For Humanity 2025 Best Game Hack Winner</p><p class="gitem-date">2025</p>
         </div>
       </a>
-      <a href="project-scuarts.html">
-        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/SCUArts/ARTS75MockupPoster.png); background-position: right;">
+      <a href="project-scuarts.html" draggable="false">
+        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Projects/SCUArts.png);">
           <h2>SCU ARTS</h2><p>Logo & Brand Design, App Visualization, Physical Drawings</p><p class="gitem-date">2024</p>
         </div>
       </a>
-      <a href="project-acappella.html">
-        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/Acappella/SCUAcappellaLogo.jpg); background-position: center;">
+      <a href="project-acappella.html" draggable="false">
+        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Projects/Acappella.png);">
           <h2>SCU A Cappella</h2><p>Logo Design</p><p class="gitem-date">2023</p>
         </div>
       </a>
-      <a href="project-eq2s.html">
-        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/EQ2S/Figma1.JPG);">
+      <a href="project-eq2s.html" draggable="false">
+        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Projects/EQ2S.png);">
           <h2>Equation2Success</h2><p>Figma App Prototyping</p><p class="gitem-date">2023</p>
         </div>
       </a>
-      <a href="project-theflame.html">
-        <div class="home-gitem home-gitem-transition" style="background-image: url(https://github.com/NicGib/nicgib.github.io/blob/master/assets/img/TheFlame/TheFlame1.png?raw=true); background-position: center;">
+      <a href="project-theflame.html" draggable="false">
+        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Projects/TheFlame.png);">
           <h2>The Flame</h2><p>Yearbook Page Design + Leadership</p><p class="gitem-date">2019-2022</p>
         </div>
       </a>
-      <a href="project-thedragon.html">
-        <div class="home-gitem home-gitem-transition" style="background-image: url(https://cdn.glitch.com/495005c3-fbd4-40ec-9078-f8aa56af48b9%2FTheDragon2.png?v=1627594625505); background-color: #ECF2F9; background-position: -10px -10px; background-repeat: no-repeat;">
+      <a href="project-thedragon.html" draggable="false">
+        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Projects/TheDragon.png);">
           <h2>The Dragon Newspaper</h2><p>Art + Comics</p><p class="gitem-date">2018-2022</p>
         </div>
       </a>
-      <a href="project-websites.html">
-        <div class="home-gitem home-gitem-transition" style="background-image: url(https://cdn.glitch.com/495005c3-fbd4-40ec-9078-f8aa56af48b9%2FGAJamBGForWebsite.png?v=1627439587695);">
+      <a href="project-websites.html" draggable="false">
+        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Projects/Websites.png);">
           <h2>Websites I've Created</h2><p>Web Design</p><p class="gitem-date">2018-2022</p>
+        </div>
+      </a>
+      <a href="project-hsmisc.html" draggable="false">
+        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Projects/HSMisc.png);">
+          <h2>High School Misc. Projects</h2><p>Robotics, Interactive Art, + More</p><p class="gitem-date">2018-2022</p>
         </div>
       </a>
       <!--<a href="project-dathletics.html">
@@ -104,33 +135,35 @@ layout: landing
         </div>
       </div>
 
-      <a href="project-piano.html">
-        <div class="home-gitem home-gitem-transition" style="background-image: url(https://cdn.glitch.com/495005c3-fbd4-40ec-9078-f8aa56af48b9%2FPiano2.PNG?v=1627594613891); background-position: center;">
+      <a href="project-piano.html" draggable="false">
+        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Projects/Piano.png);">
           <h2>Piano</h2><p>Sheet Music Composition</p><p class="gitem-date">2019-Present</p>
         </div>
       </a>
-      <a href="project-music.html">
-        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/Music/PianoFLStudioRef_2ndPiano__2-1-22_.PNG); background-position: center;">
+      <a href="project-music.html" draggable="false">
+        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Projects/Music.png);">
           <h2>Music</h2><p>Digital Compositions</p><p class="gitem-date">2020-Present</p><!--Check date-->
         </div>
       </a>
-      <a href="project-celeste.html">
-        <div class="home-gitem home-gitem-transition" style="background-image: url(https://cdn.glitch.com/495005c3-fbd4-40ec-9078-f8aa56af48b9%2FCeleste2.PNG?v=1627594564477);">
+      <a href="project-celeste.html" draggable="false">
+        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Projects/Celeste.png);">
           <h2>Celeste Map Design</h2><p>My Modding Experience</p><p class="gitem-date">2020-2021</p>
           <!--Check date-->
         </div>
       </a>
-      <!--<a href="project-schoolwork.html">-->
+      <div class="home-gitem" style="background-image: url(assets/img/0-Projects/Blank.png);">
+        </div>
+      <!--<a href="project-schoolwork.html" draggable="false">-->
         <!-- <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Gen/NICGIB-PlaceholderImage3.png);">
           <h2>School Films & Work</h2><p>Films or other works made for my classes</p>
         </div> -->
       <!--</a>-->
-      <!--<a href="project-otherart.html">-->
+      <!--<a href="project-otherart.html" draggable="false">-->
         <!-- <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Gen/NICGIB-PlaceholderImage3.png);">
           <h2>Other Art</h2><p>Other digital doodles I've made over the years!</p>
         </div> -->
       <!--</a>-->
-      <!--<a href="project-miscprojects.html">-->
+      <!--<a href="project-miscprojects.html" draggable="false">-->
         <!-- <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Gen/NICGIB-PlaceholderImage3.png);">
           <h2>Misc Personal Projects</h2><p></p>
         </div> -->

@@ -310,12 +310,15 @@ $(window).scroll(function(){
 
     var landingBody = $("#blackHomeContainer");
 
+    var liquidDivider = $("#liquid-divider");
+
     if (landingLogo.length && landingBody.length) { //If landingLogo & landingBody exist:
         var fixed_position = landingLogo.offset().top;
         var fixed_height = landingLogo.height();
 
-        var toCross_position = landingBody.offset().top;
+        var toCross_position = landingBody.offset().top - (liquidDivider.height()/3);
         var toCross_height = landingBody.height();
+
 
         if (fixed_position + fixed_height < toCross_position) {
             //landingLogo.removeClass('invertLogo');
