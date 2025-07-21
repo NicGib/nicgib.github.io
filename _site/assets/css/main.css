@@ -298,6 +298,12 @@ p {
   transform: translateX(-50%);
 }
 
+@media only screen and (max-width: 600px) {
+  #arrowLink {
+    top: 70vh;
+  }
+}
+
 .svg-arrow {
   /*position: absolute;
   top: 83vh;*/
@@ -770,6 +776,9 @@ p {
   }
   .home-grid-text {
     font-size: 1em;
+  }
+  .home-gitem-placeholder {
+    display: none;
   }
 }
 
