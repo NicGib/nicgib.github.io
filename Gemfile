@@ -1,3 +1,6 @@
 source "https://rubygems.org"
 
-gem "jekyll"
+gem "jekyll", "3.10.0"
+gem "base64"
+gem "webrick"
+gem "bigdecimal"

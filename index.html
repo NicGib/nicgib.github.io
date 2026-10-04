@@ -8,7 +8,7 @@ layout: landing
   <img src="assets/img/0-Gen/NICGIB-DisplayText_v1-2.png" width="80%" height="auto" style="margin-left: 10px; z-index: 1;" class="titleParallax tP2" draggable="false">
   <img src="assets/img/0-Gen/NICGIB-DisplayText_v1-3.png" width="80%" height="auto" style="margin-left: 10px; z-index: 2;" class="titleParallax tP3" draggable="false">
   <a href="#blackHomeContainer" id="arrowLink" class="arrow-disabled" draggable="false">
-    <img id="animatedArrow" class="svg-arrow" src="https://cdn.glitch.com/495005c3-fbd4-40ec-9078-f8aa56af48b9%2Fdown-arrow-svgrepo-com%20(1).svg?v=1627341145222" width="100px" height="100px" draggable="false">
+    <img id="animatedArrow" class="svg-arrow" src="assets/img/0-Gen/Arrow_V1.png" width="100px" height="130px" draggable="false">
   </a>
   <script>
     window.addEventListener("load", () => {
@@ -17,11 +17,18 @@ layout: landing
 
       // trigger animation after 3s
       setTimeout(() => {
+        // start fadedown (1s)
         arrow.classList.add("anim-fadeindown");
 
         // enable link once animation starts
         link.classList.remove("arrow-disabled");
       }, 3000);
+      
+      setTimeout(() => {
+        // start looping float animation
+        arrow.classList.add("anim-float");
+      }, 4000);
+
     });
 
     document.getElementById("arrowLink").addEventListener("click", function (e) {
@@ -50,26 +57,13 @@ layout: landing
         </div>
       </div>
 
-      <a href="project-gdtc.html" draggable="false">
-        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Projects/GDTC.png);">
-          <h2>GDTC & NicaAgua</h2><p>Web Design (TerminalFour)</p><p class="gitem-date">2024-Present</p>
-        </div>
-      </a>
       <a href="project-relif.html" draggable="false">
         <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Projects/RELIF.png);"> <!-- originally background-size: 150%;-->
           <h2>RELIF & REBRIF</h2><p>Web Design (cPanel)</p><p class="gitem-date">2023-Present</p>
         </div>
       </a>
-      <a href="project-vocalicious.html" draggable="false">
-        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Projects/Vocalicious.png); background-position: center;">
-          <h2>Vocalicious</h2><p>Acappella Branding, Content, & Web Design</p><p class="gitem-date">2023-Present</p>
-        </div>
-      </a>
-      <a href="project-theredwood.html" draggable="false">
-        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Projects/TheRedwood.png);">
-          <h2>The Redwood</h2><p>Yearbook Page Design + Leadership</p><p class="gitem-date">2022-Present</p>
-        </div>
-      </a>
+      <div class="home-gitem home-gitem-placeholder home-gitem-placeholder-span3" style="background-image: url(assets/img/0-Projects/Blank.png);">
+      </div>
 
       <div class="home-grid-text-wrapper">
         <div class="home-grid-marquee-gradient"></div>
@@ -85,9 +79,19 @@ layout: landing
           <h2>Disaster Quest</h2><p>Hack For Humanity 2025 Best Game Hack Winner</p><p class="gitem-date">2025</p>
         </div>
       </a>
+      <a href="project-gdtc.html" draggable="false">
+        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Projects/GDTC.png);">
+          <h2>GDTC & NicaAgua</h2><p>Web Design (TerminalFour)</p><p class="gitem-date">2024-2026</p>
+        </div>
+      </a>
       <a href="project-scuarts.html" draggable="false">
         <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Projects/SCUArts.png);">
           <h2>SCU ARTS</h2><p>Logo & Brand Design, App Visualization, Physical Drawings</p><p class="gitem-date">2024</p>
+        </div>
+      </a>
+      <a href="project-vocalicious.html" draggable="false">
+        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Projects/Vocalicious.png); background-position: center;">
+          <h2>Vocalicious</h2><p>Acappella Branding, Content, & Web Design</p><p class="gitem-date">2023-2026</p>
         </div>
       </a>
       <a href="project-acappella.html" draggable="false">
@@ -100,9 +104,14 @@ layout: landing
           <h2>Equation2Success</h2><p>Figma App Prototyping</p><p class="gitem-date">2023</p>
         </div>
       </a>
+      <a href="project-theredwood.html" draggable="false">
+        <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Projects/TheRedwood.png);">
+          <h2>The Redwood</h2><p>College Yearbook Design & Leadership</p><p class="gitem-date">2022-2026</p>
+        </div>
+      </a>
       <a href="project-theflame.html" draggable="false">
         <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Projects/TheFlame.png);">
-          <h2>The Flame</h2><p>Yearbook Page Design + Leadership</p><p class="gitem-date">2019-2022</p>
+          <h2>The Flame</h2><p>High School Yearbook Design & Leadership</p><p class="gitem-date">2019-2022</p>
         </div>
       </a>
       <a href="project-thedragon.html" draggable="false">
@@ -117,9 +126,11 @@ layout: landing
       </a>
       <a href="project-hsmisc.html" draggable="false">
         <div class="home-gitem home-gitem-transition" style="background-image: url(assets/img/0-Projects/HSMisc.png);">
-          <h2>High School Misc. Projects</h2><p>Robotics, Interactive Art, + More</p><p class="gitem-date">2018-2022</p>
+          <h2>High School Misc. Projects</h2><p>Robotics & Interactive Art</p><p class="gitem-date">2018-2022</p>
         </div>
       </a>
+      <div class="home-gitem home-gitem-placeholder" style="background-image: url(assets/img/0-Projects/Blank.png);">
+      </div>
       <!--<a href="project-dathletics.html">
         <div class="home-gitem home-gitem-transition" style="background-image: url(https://cdn.glitch.com/495005c3-fbd4-40ec-9078-f8aa56af48b9%2FGAJamBGForWebsite.png?v=1627439587695);">
           <h2>D.Athletics</h2><p>Web Design</p>

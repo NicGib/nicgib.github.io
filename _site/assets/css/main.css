@@ -307,38 +307,38 @@ p {
 .svg-arrow {
   /*position: absolute;
   top: 83vh;*/
+  position: relative;
   opacity: 0; /* start hidden */
   transition: opacity 0.3s ease;
 }
 
+.arrow-disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
 @-webkit-keyframes fadeInDown {
    0% {
-       opacity: 0;
-       -webkit-transform: translateY(-40px);
+      opacity: 0;
+      -webkit-transform: translateY(-40px) rotate(-2deg);
    }
 
    100% {
-       opacity: 1;
-       -webkit-transform: translateY(40px);
+      opacity: 1;
+      -webkit-transform: translateY(40px) rotate(0deg);
    }
 }
 
 @keyframes fadeInDown {
    0% {
       opacity: 0;
-      transform: translateY(-40px);
+      transform: translateY(-40px) rotate(-2deg);
    }
    100% {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0) rotate(0deg);
    }
 } 
-
-
-.arrow-disabled {
-  pointer-events: none;
-  cursor: default;
-}
 
 .anim-fadeindown {
   -webkit-animation-name: fadeInDown;
@@ -348,6 +348,48 @@ p {
   animation-timing-function: ease-out;
 }
 
+@-webkit-keyframes floatLooping {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+  }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+  }
+}
+
+@keyframes floatLooping {
+   0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+} 
+
+.anim-float {
+  -webkit-animation-name: floatLooping;
+  animation-name: floatLooping;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
 
 .svg-glasses {
   position: fixed;
@@ -735,6 +777,10 @@ p {
   }
   .home-grid-text {
     font-size: 2em;
+  }
+
+  .home-gitem-placeholder-span3 {
+    grid-column: span 3;
   }
 }
 
