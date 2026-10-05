@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>IAJES - NICGIB</title>
+    <link rel="icon" href="https://github.com/NicGib/nicgib.github.io/blob/master/assets/img/0-Gen/Favicon_v4.8.png?raw=true" />
+
+    <!-- link to main stylesheet -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    <!--main js script-->
+    <script src="/assets/js/script.js" defer></script>
+
+    <!-- jQuery from Google's CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- GSAP TweenMax CDN (for parallax) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+
+    <!--FontAwesome-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+    <script src="https://kit.fontawesome.com/11abcac906.js" crossorigin="anonymous"></script>
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!--Project Header-->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <!--font-family: 'Bebas Neue', cursive;-->
+    
+    <!--Sub Header-->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <!--font-family: 'Space Grotesk', sans-serif;-->
+
+    <!--Body-->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+    <!--font-family: 'Source Code Pro', monospace;-->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <!--font-family: 'Space Mono', monospace;-->
+    
+  </head>
+  <body>
+    <!-- cursor element -->
+    <div class="cursor"></div>
+    <div class="cwhite"></div>
+
+    <!-- back to top button -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <a class="svg-glasses-link" href="index.html">
+	<img src="assets/img/0-Gen/NICGIB-Logo_v1.png" width="89px" height="89px" class="svg-glasses-new">
+</a>
+<!--<a class="svg-glasses-link" href="index.html"><img src="https://cdn.glitch.com/495005c3-fbd4-40ec-9078-f8aa56af48b9%2FNICGIB-GlassesLogoV1.3.svg?v=1627341414452" width="89px" height="53px" class="svg-glasses"></a>-->
+
+<a class="about-link" href="about.html">
+	<img src="assets/img/0-Gen/NICGIB-About.png" width="105px" height="105px">
+</a>
+<!--<a class="about-link" href="about.html">ABOUT</a>-->
+
+<div class="pdivider"></div>
+
+    <h2 class="ptext-header">IAJES</h2>
+
+    <div class="pdivflex-large">
+    <a target="blank" href="https://iajes.org/"><img src="assets/img/IAJES/IAJES1.png" class="pimg-large"></a>
+</div>
+<p class="ptext">
+  <span class="pbutton-center">
+    <a class="pbutton" target="blank" href="https://iajes.org/">IAJES.org</a>
+  </span>
+</p>
+<div class="pdivider-small"></div>
+<p class="ptext">
+    <em>We redesigned the IAJES website into an interactive hub for discovering members and collaborating across Jesuit engineering schools worldwide. Built with React and Supabase, it’s accessible, maintainable, and scalable.</em>
+    <br><br>
+    Early May, my team and I presented our Senior Design project at the <a class="onwhite" target="_blank" href="https://www.scu.edu/engineering/undergraduate/senior-design/2026-senior-design/presentation-schedule/">Santa Clara University School of Engineering's 2026 Senior Design Conference</a>. During the summer of 2026, the final website went live at <a class="onwhite" target="blank" href="https://iajes.org/">iajes.org</a>.
+</p>
+<div class="pdivider-border"></div>
+<h4 class="ptext-subheader">Background</h4>
+<div class="pdivflex-large">
+    <p class="ptext-caption">IAJES Logo</p>
+    <img src="assets/img/IAJES/logo-iajes.svg" class="pimg-5">
+</div>
+<div class="pdivider-small"></div>
+<p class="ptext">
+    Over the past year, Isabelle Hu, Anisha Malani, Justin Fan, and I worked with IAJES -- the International Association of Jesuit Engineering and Science Schools -- to redesign their static Google Site into a dynamic member database and information archive.
+    <br><br>
+    Since the summer of 2025, our team talked consistently with our clients: Carlos Rivas and Raul Garcia-Huerta, the President and (former) Vice President of IAJES. We established their goals for the website, expanded their brand's design language, and engaged in a cycle of receiving feedback and proposing revisions during weekly meetings.
+    <br><br>
+    From them, we learned what would become our website's 3 core features:
+    <br><br>
+</p>
+<p class="ptext">
+    <ul class="ptext" style="margin-left: 1.5em;">
+        <li>As an organization that connects 60+ universities worldwide to form research groups and task forces, our website makes communication between their members easy, stores member data safely, and allows long-term growth of their network.</li>
+        <li>IAJES also periodically publishes resources, such as videos, webinars, and international and regional conferences. To archive this knowledge for the world, we included multiple highly connective pages where content can be modularly added, edited, and removed without sacrificing design quality.</li>
+        <li>To accommodate administrators who are not familiar with modern web code, our website uses familiar Google Sites text inputs and file uploads within the site itself. All done without touching the code. If code does need to be edited, we made sure to keep it organized, following best practices for web development.</li>
+    </ul>
+</p>
+<p class="ptext">
+    <br>
+    After presenting our project to IAJES' governing board, we received official approval for launch during their July 2026 international conference. Until then, our team refined our project before fully going live, focusing on implementing future features such as a full newsletter editing & publishing system, an admin dashboard for easy role management of members, and full integration with IAJES' existing database.
+    <br><br>
+    Thank you to my teammates Isabelle Hu, Anisha Malani, and Justin Fan for an incredible year of dedication. Thank you to Dr. Silvia Figueira for advising our team, and providing invaluable guidance and support. Also, thank you to Allan A. Báez Morales for being our co-advisor through the SCU Frugal Innovation Hub, and for providing hosting accommodations for our demo.
+    <br>And a huge thank you to Carlos and Raúl for their constant feedback and trust throughout the process!
+</p>
+<div class="pdivider-border"></div>
+<h4 class="ptext-subheader">Resources</h4>
+<div class="pdivflex-divided">
+  <img src="assets/img/IAJES/IAJESPresentation1.jpg" class="pimg-small">
+  <img src="assets/img/IAJES/IAJESPresentation2.jpg" class="pimg-small">
+</div>
+<div class="pdivider-small"></div>
+<div class="pdivflex-divided">
+  <img src="assets/img/IAJES/IAJESPresentation3.jpg" class="pimg-small">
+  <img src="assets/img/IAJES/IAJESPresentation4.jpg" class="pimg-small">
+</div>
+<div class="pdivider-small"></div>
+<div class="pdivflex-large">
+    <p class="ptext-caption">IAJES July Conference Video</p>
+    <video controls>
+        <source src="https://github.com/NicGib/nicgib.github.io/raw/master/assets/img/IAJES/Final-IAJESJulyConferenceVid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+<div class="pdivider-small"></div>
+<div class="pdivflex-large">
+    <p class="ptext-caption">IAJES Senior Design Presentation</p>
+    <object class="pdf-landscape" data="assets/img/IAJES/IAJES Website Redesign - Senior Design Presentation - Justin Nicolas Isabelle Anisha.pdf#view=FitH&toolbar=0">
+        <p class="ptext">Your web browser doesn't have a PDF plugin. <a class="onwhite" href="assets/img/IAJES/IAJES Website Redesign - Senior Design Presentation - Justin Nicolas Isabelle Anisha.pdf#view=FitH&toolbar=0">View the PDF file here.</a></p>
+    </object>
+</div>
+<div class="pdivider-small"></div>
+<p class="ptext">
+  <span class="pbutton-center">
+    <a class="pbutton" target="blank" href="https://scholarcommons.scu.edu/cseng_senior/360/">IAJES Thesis on SCU Scholar Commons</a>
+  </span>
+</p>
+<div class="pdivflex-large">
+    <p class="ptext-caption">IAJES Senior Design Thesis</p>
+    <object class="pdf-portrait-large" data="assets/img/IAJES/IAJES Website Redesign - Senior Design Thesis - Justin Nicolas Isabelle Anisha.pdf#view=FitH&toolbar=0">
+        <p class="ptext">Your web browser doesn't have a PDF plugin. <a class="onwhite" href="assets/img/IAJES/IAJES Website Redesign - Senior Design Thesis - Justin Nicolas Isabelle Anisha.pdf#view=FitH&toolbar=0">View the PDF file here.</a></p>
+    </object>
+</div>
+<div class="pdivider-small"></div>
+
+    <footer class="non-home-footer" id="footerid">
+  <div class="fbox non-home-fbox">
+    <div class="ftextflex">
+      <p class="ftext">I'm passionate about all things design, constantly learning new things and putting them into practice. Let's talk!</p>
+    </div>
+    <svg height="240" width="10" class="dividerLine">
+      <line x1="0" y1="0" x2="0" y2="240" style="stroke:rgb(0,0,0);stroke-width:5" />
+    </svg>
+    <!-- <div class="iconnameflex">
+      <a href="https://www.linkedin.com/in/nic-gib/" target="blank" class="footericonlink">Linkedin</a>
+      <a href="https://github.com/NicGib" target="blank" class="footericonlink">GitHub</a>
+      <a href="https://www.instagram.com/nicgib01/" target="blank" class="footericonlink">Instagram</a>
+    </div> -->
+    <div class="iconflex">
+      <a href="https://www.linkedin.com/in/nic-gib/" target="blank" class="icon"><i class="fa-brands fa-linkedin fa-3x"></i></a>
+      <!--<a href="https://codepen.io/NicGib" target="blank" class="icon"><i class="fa fa-codepen fa-3x"></i></a>-->
+      <a href="https://github.com/NicGib" target="blank" class="icon icon-github"><div><i class="fa fa-github fa-3x"></i></div></a>
+      <a href="https://www.instagram.com/nicgib01/" target="blank" class="icon"><div><i class="fa-brands fa-square-instagram fa-3x"></i></div></a>
+    </div>
+  </div>
+  <p class="copyright project-copyright"><a style="font-size: inherit; font-weight: 700; font-family: 'Source Code Pro', monospace; text-decoration: underline; color: inherit;" href="assets/img/0-Gen/PDF Portfolio (Master 8.19.25)/Nicolas_Gibson_Portfolio.pdf" target="_blank">Download NICGIB PDF Portfolio</a> | © 2020 Nicolas Gibson</p>
+</footer>
+  </body>
+</html>

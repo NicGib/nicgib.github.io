@@ -785,6 +785,9 @@ p {
   .home-gitem-placeholder-span3 {
     grid-column: span 3;
   }
+  .home-gitem-placeholder-span2 {
+    grid-column: span 2;
+  }
 }
 
 @media only screen and (max-width: 850px) {
@@ -802,6 +805,10 @@ p {
   }
   .home-grid-text {
     font-size: 1.5em;
+  }
+
+  .home-gitem-placeholder-span2 {
+    display: none;
   }
 }
 
@@ -1189,8 +1196,25 @@ video {
   background-color: #f2f3f5;
 }
 
+.video-YT-container {
+  width: 100%;
+}
+
+.video-YT-frame {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
 .video-YT {
-  width: 600px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+
   border: 3px solid #323639;
   border-radius: 5px;
   background-color: #f2f3f5;
